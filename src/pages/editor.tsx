@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import VerifiedBadge from '../components/atoms/VerifiedBadge'
 
 
 function Tweet() {
@@ -8,8 +9,12 @@ function Tweet() {
             <header className="flex space-x-3  mb-4">
                 <img src="https://pbs.twimg.com/profile_images/2320423543/9qheijpvtu9g5dteqvvw_400x400.jpeg" className="rounded-full h-12 w-12" />
                 <div className="flex flex-col">
-                    <span className="text-[#e7e9ea]" contentEditable>Kim Dotcome</span>
+                    <div className="flex items-center space-x-0.5">
+                        <span className="font-bold text-[#e7e9ea]" contentEditable>Kim Dotcome</span>
+                        <VerifiedBadge type="person" />
+                    </div>
                     <span className="text-[#71767b]">@<span contentEditable>KimDotcom</span></span>
+                   
                 </div>
             </header>
 
