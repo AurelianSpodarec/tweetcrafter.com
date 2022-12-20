@@ -5,23 +5,29 @@ import { Inter } from '@next/font/google'
 
 function Tweet() {
     return (
-        <article>
-            <header>
-                Kim Dotcome
+        <article className="bg-[#000000] p-4">
+            <header className="flex space-x-3  mb-4">
+                <img src="https://pbs.twimg.com/profile_images/2320423543/9qheijpvtu9g5dteqvvw_400x400.jpeg" className="rounded-full h-12 w-12" />
+                <div className="flex flex-col">
+                    <span className="text-[#e7e9ea]">Kim Dotcome</span>
+                    <span className="text-[#71767b]">@KimDotcom</span>
+                </div>
             </header>
+
             <section>
-                <p>
-                    Hey @elonmusk, it’s unwise to run a poll like this when you are now deep state enemy #1. They have the biggest bot army on Twitter. They have 100k ‘analysts’ with 30-40 accounts all voting against you. Let’s clean up and then run this poll again. The majority has faith in you. 😘
+                <p className="text-[#e7e9ea] text-[23px]" style={{"lineHeight": "1.2em"}}>
+                    Hey <span className="text-[#1d9bf0]">@elonmusk</span>, it’s unwise to run a poll like this when you are now deep state enemy #1. They have the biggest bot army on Twitter. They have 100k ‘analysts’ with 30-40 accounts all voting against you. Let’s clean up and then run this poll again. The majority has faith in you. 😘
                 </p>
             </section>
+
             <footer>
-                <time dateTime="20:00">
+                <time dateTime="2022-12-19T12:06:26.000Z" className="text-[#71767b] py-4 block" style={{"fontSize": "15px"}}>
                     12:06 PM · Dec 19, 2022
                 </time>
-                <div className="flex">
-                    <p><span>7,912</span> Retweets</p>
-                    <p><span>854</span> Quote Tweets</p>
-                    <p><span>56.1K</span> Likes</p>
+                <div className="flex space-x-6">
+                    <p className="text-[#71767b] text-sm"><span className="text-[#e7e9ea] font-bold">7,912</span> Retweets</p>
+                    <p className="text-[#71767b] text-sm"><span className="text-[#e7e9ea] font-bold">854</span> Quote Tweets</p>
+                    <p className="text-[#71767b] text-sm"><span className="text-[#e7e9ea] font-bold">56.1K</span> Likes</p>
                 </div>
             </footer>
         </article>
