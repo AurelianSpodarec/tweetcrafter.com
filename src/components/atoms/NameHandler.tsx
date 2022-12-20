@@ -1,6 +1,6 @@
 function NameHandler() {
     return (
-        <span className="text-[#71767b]">@<span contentEditable>KimDotcom</span></span>
+        <span className="text-[#71767b]">@<span>KimDotcom</span></span>
     )
 }
 

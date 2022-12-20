@@ -1,46 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Avatar from '../components/atoms/Avatar'
-import TweetTextarea from '../components/atoms/TweetTextarea'
-import VerifiedBadge from '../components/atoms/VerifiedBadge'
-import AvatarName from '../components/molecules/AvatarName'
-
-
-function Tweet() {
-    return (
-        <article className="bg-[#000000] p-4">
-            <AvatarName />
-
-            <section>
-                <TweetTextarea />
-            </section>
-
-            <footer>
-                <time dateTime="2022-12-19T12:06:26.000Z" className="text-[#71767b] py-4 block" style={{"fontSize": "15px"}}>
-                    12:06 PM · Dec 19, 2022
-                </time>
-                <div className="flex space-x-6">
-                    <p className="text-[#71767b] text-sm"><span contentEditable className="text-[#e7e9ea] font-bold">7,912</span> Retweets</p>
-                    <p className="text-[#71767b] text-sm"><span contentEditable className="text-[#e7e9ea] font-bold">854</span> Quote Tweets</p>
-                    <p className="text-[#71767b] text-sm"><span contentEditable className="text-[#e7e9ea] font-bold">56.1K</span> Likes</p>
-                </div>
-            </footer>
-        </article>
-    )
-}
-
-function Profile() {
-    return (
-        <section>
-            <div>
-                <img src="https://pbs.twimg.com/profile_banners/44196397/1576183471/1080x360" />
-            </div>
-            <div>
-                <AvatarName />
-            </div>
-        </section>
-    )
-}
+import Profile from '../components/templates/Profile'
+import Tweet from '../components/templates/Tweet'
 
 export default function Editor() {
     return (
@@ -54,7 +14,7 @@ export default function Editor() {
         <main className="flex h-full">
 
             <div className="relative">
-                <aside className="flex flex-col relative overflow-hidden h-full w-[255px] bg-[#1d1d1d]">
+                <aside className="flex flex-col relative overflow-hidden h-full w-[255px] bg-[#000]">
                 <div className="flex flex-col flex-1 overflow-hidden">
 
                     <header className="flex flex-row w-full border-b border-gray-700 mb-4">
