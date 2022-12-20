@@ -1,18 +1,30 @@
 import Avatar from "../atoms/Avatar";
-import NameHandler from "../atoms/NameHandler";
-import UserName from "../atoms/UserName";
+import NameHandler from "../atoms/HandlerName";
+import VerifiedBadge from "../atoms/VerifiedBadge";
 
-function AvatarName(props:any) {
+function AvatarName({src, name, handler}:AvatarNameProps) {
+    console.log(src )
     return (
-        <div>
-            <header className="flex space-x-3 mb-4">
-                {props.avatar === "" ? "" : <Avatar />}
+        <header className="flex space-x-3 mb-4">
+            <Avatar src={src} />
+
+            <div className="flex flex-col">
                 <div className="flex flex-col">
-                    <UserName />
+                    <div className="flex items-center space-x-0.5">
+                        <span className="font-bold text-[#e7e9ea]">{name}</span>
+                        <VerifiedBadge type="person" />
+                    </div>
+                    <NameHandler handler={handler} />
                 </div>
-            </header>
-        </div>
+            </div>
+        </header>
     )
 }
 
 export default AvatarName;
+
+interface AvatarNameProps {
+    src?: string;
+    name: string;
+    handler: string;
+}

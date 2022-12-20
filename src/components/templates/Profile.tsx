@@ -10,8 +10,8 @@ function Profile() {
             </div>
             <section className="p-4">
                 <div style={{ "marginTop": "-15%" }}>
-                    <Avatar size="lg"  />
-                    <AvatarName />
+                    <Avatar src="https://pbs.twimg.com/profile_images/2320423543/9qheijpvtu9g5dteqvvw_400x400.jpeg" size="lg"  />
+                    <AvatarName name="Kim Dotcom" handler="KimDotcom" />
                 </div>
 
                 <div className="text-gray-300">

@@ -1,10 +1,10 @@
 function Avatar({ 
         size = 'md', 
         shape = 'rounded', 
-        src = 'https://pbs.twimg.com/profile_images/2320423543/9qheijpvtu9g5dteqvvw_400x400.jpeg', 
+        src, 
         alt 
     }: AvatarProps) {
-        
+
     let avatarSize;
     switch(size) {
         case 'sm':
@@ -19,7 +19,7 @@ function Avatar({
         default:
             avatarSize = 48;
     }
-
+    if(src === undefined || src === "") return <></>
     return (
         <img 
             src={src}

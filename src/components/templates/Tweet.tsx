@@ -5,7 +5,7 @@ import AvatarName from "../molecules/AvatarName"
 function Tweet() {
     return (
         <article className="bg-[#000000] p-4">
-            <AvatarName />
+            <AvatarName name="Kim Dotcom" handler="KimDotcom" src="https://pbs.twimg.com/profile_images/2320423543/9qheijpvtu9g5dteqvvw_400x400.jpeg" />
 
             <section>
                 <TweetTextarea />
