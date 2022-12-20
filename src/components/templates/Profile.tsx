@@ -4,14 +4,19 @@ import AvatarName from "../molecules/AvatarName"
 
 function Profile() {
     return (
-        <section>
+        <article className="bg-black">
             <div>
-                <img src="https://pbs.twimg.com/profile_banners/44196397/1576183471/1080x360" />
+                <img src="https://pbs.twimg.com/profile_banners/2474749586/1654876130/1080x360" />
             </div>
-            <div>
-                <Avatar size="lg" />
-                <AvatarName />
+            <section className="p-4">
+                <div style={{ "marginTop": "-15%" }}>
+                    <Avatar size="lg"  />
+                    <AvatarName />
+                </div>
 
+                <div className="text-gray-300">
+                    <p>Pro-civilization : Time, "Hero of the Environment" : Bestselling author of "Apocalypse Never" & "San Fransicko" : Green Book Award : MD = my initials. Not a doc</p>
+                </div>
 
                 <div className="flex">
                     <span >
@@ -19,14 +24,14 @@ function Profile() {
                     </span>
                     <time>Joined June 2009</time>
                 </div>
-                <div>
+                <div className="flex flex-row space-x-4">
                     <Stat amount="153" name="Following" />
                     <Stat amount="122.3M" name="Followers" />
                 </div>
 
                 <p>Not followed by anyone you’re following</p>
-            </div>
-        </section>
+            </section>
+        </article>
     )
 }
 
