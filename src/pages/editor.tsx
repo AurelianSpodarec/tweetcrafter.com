@@ -1,27 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Avatar from '../components/atoms/Avatar'
+import TweetTextarea from '../components/atoms/TweetTextarea'
 import VerifiedBadge from '../components/atoms/VerifiedBadge'
+import AvatarName from '../components/molecules/AvatarName'
 
 
 function Tweet() {
     return (
         <article className="bg-[#000000] p-4">
-            <header className="flex space-x-3  mb-4">
-                <img src="https://pbs.twimg.com/profile_images/2320423543/9qheijpvtu9g5dteqvvw_400x400.jpeg" className="rounded-full h-12 w-12" />
-                <div className="flex flex-col">
-                    <div className="flex items-center space-x-0.5">
-                        <span className="font-bold text-[#e7e9ea]" contentEditable>Kim Dotcome</span>
-                        <VerifiedBadge type="person" />
-                    </div>
-                    <span className="text-[#71767b]">@<span contentEditable>KimDotcom</span></span>
-                   
-                </div>
-            </header>
+            <AvatarName />
 
             <section>
-                <p contentEditable className="text-[#e7e9ea] text-[23px]" style={{"lineHeight": "1.2em"}}>
-                    Hey <span className="text-[#1d9bf0]">@elonmusk</span>, it’s unwise to run a poll like this when you are now deep state enemy #1. They have the biggest bot army on Twitter. They have 100k ‘analysts’ with 30-40 accounts all voting against you. Let’s clean up and then run this poll again. The majority has faith in you. 😘
-                </p>
+                <TweetTextarea />
             </section>
 
             <footer>
@@ -35,6 +26,19 @@ function Tweet() {
                 </div>
             </footer>
         </article>
+    )
+}
+
+function Profile() {
+    return (
+        <section>
+            <div>
+                <img src="https://pbs.twimg.com/profile_banners/44196397/1576183471/1080x360" />
+            </div>
+            <div>
+                <AvatarName />
+            </div>
+        </section>
     )
 }
 
@@ -120,9 +124,22 @@ export default function Editor() {
             </div>
 
             <section className="flex bg-gradient-to-r from-blue-500 to-pink-500 h-full w-full items-center justify-center">
-                <div className="max-w-[598px]">
-                    <Tweet />
+
+                <div className="flex flex-col">
+
+                    <span>Profile</span>
+                    <span>Pool</span>
+                    <span>Profile Tweet</span>
+                    <span>Tweet</span>
+                    <span>Relevant People</span>
+
+                    <div className="max-w-[598px] space-y-8">
+                        <Tweet />
+                        <Profile />
+                    </div>
                 </div>
+
+
             </section>
 
         </main>
