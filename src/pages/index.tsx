@@ -3,7 +3,30 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 
 
-const inter = Inter({ subsets: ['latin'] })
+function Tweet() {
+    return (
+        <article>
+            <header>
+                Kim Dotcome
+            </header>
+            <section>
+                <p>
+                    Hey @elonmusk, it’s unwise to run a poll like this when you are now deep state enemy #1. They have the biggest bot army on Twitter. They have 100k ‘analysts’ with 30-40 accounts all voting against you. Let’s clean up and then run this poll again. The majority has faith in you. 😘
+                </p>
+            </section>
+            <footer>
+                <time dateTime="20:00">
+                    12:06 PM · Dec 19, 2022
+                </time>
+                <div className="flex">
+                    <p><span>7,912</span> Retweets</p>
+                    <p><span>854</span> Quote Tweets</p>
+                    <p><span>56.1K</span> Likes</p>
+                </div>
+            </footer>
+        </article>
+    )
+}
 
 export default function Home() {
     return (
@@ -14,8 +37,22 @@ export default function Home() {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        <main>
-            Home page
+        <main className="flex h-full">
+
+            <aside className="flex w-[370px] bg-green-500">
+                functions
+
+                Options:
+                Twitter Profile
+                Tweet
+            </aside>
+
+            <section className="flex bg-gradient-to-r from-blue-500 to-pink-500 h-full w-full items-center justify-center">
+                <div className="max-w-[598px]">
+                    <Tweet />
+                </div>
+            </section>
+
         </main>
         </>
     )
