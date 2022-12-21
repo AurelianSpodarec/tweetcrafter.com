@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AvatarName from "../../../../components/molecules/AvatarName";
 import { useTweetTabs } from "../../../../context/TweetTabsInfo";
 import profiles from "../../../../json/profiles";
+import OptionView from '../Options/OptionView';
 
 
 function ProfileItem({profile}:any) {
@@ -101,14 +102,16 @@ function SettingView() {
 
             <header className="flex flex-row w-full border-b border-gray-700 mb-4">
             <div className="p-4 flex justify-between items-center w-full">
-                <div className="text-gray-50 font-medium" onClick={() => setActiveTab('settings')}>Settings</div>
-                <div className="text-gray-50 font-medium" onClick={() => setActiveTab('profiles')}>Profiles</div>
+                <div className={activeTab === 'type' ? 'bg-indigo-500 text-gray-50 font-medium' : "text-gray-50 font-medium"} onClick={() => setActiveTab('type')}>Type</div>
+                <div className={activeTab === 'settings' ? 'bg-indigo-500 text-gray-50 font-medium' :  "text-gray-50 font-medium"} onClick={() => setActiveTab('settings')}>Settings</div>
+                <div className={activeTab === 'profiles' ? 'bg-indigo-500 text-gray-50 font-medium' :  "text-gray-50 font-medium"} onClick={() => setActiveTab('profiles')}>Profiles</div>
             </div>
             </header>
 
-            <div>
+            <div className="overflow-y-auto">
                 { activeTab === "profiles" && <ProfileList /> }
                 { activeTab === "settings" && <SettingList /> }
+                { activeTab === "type" && <OptionView /> }
             </div>
 
         </div>

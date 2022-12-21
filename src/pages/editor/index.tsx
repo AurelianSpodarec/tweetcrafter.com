@@ -21,15 +21,11 @@ export default function Editor() {
 
         <main className="flex h-full bg-gradient-to-r from-blue-500 to-pink-500 ">
 
-            <div className="relative">
+            {/* <div className="relative">
                 <aside className="flex flex-col relative sidebar-scrollbar overflow-y-auto h-full w-[255px] bg-[#000]">
                     <OptionView />
                 </aside>
-            </div>
-
-            <section className="flex p-8 h-full w-full items-center justify-center">
-                <ContentView />
-            </section>
+            </div> */}
 
             <div className="relative">
                 <aside className="flex flex-col relative overflow-hidden h-full w-[255px] bg-[#000]">
@@ -37,6 +33,12 @@ export default function Editor() {
                 </aside>
             </div>
 
+
+            <section className="flex p-8 h-full w-full items-center justify-center">
+                <ContentView />
+            </section>
+
+          
         </main>
         </>
     )
