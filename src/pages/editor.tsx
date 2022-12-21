@@ -11,7 +11,50 @@ export default function Editor() {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        <main className="flex h-full">
+        <main className="flex h-full bg-gradient-to-r from-blue-500 to-pink-500 ">
+
+        <div className="relative">
+            <aside className="flex flex-col relative overflow-hidden h-full w-[255px] bg-[#000]">
+                
+             
+                <div className="p-4 text-center">
+                    <img className="rounded-xl" src="https://i.imgur.com/naK8pBm.png" />
+                    <h3 className="text-gray-300">Profile</h3>
+                </div>
+
+                <div className="p-4 text-center">
+                    <img className="rounded-xl" src="https://i.imgur.com/UWmMBMa.png" />
+                    <h3 className="text-gray-300">Tweet</h3>
+                </div>
+
+                <div className="p-4 text-center">
+                    <img className="rounded-xl" src="https://i.imgur.com/HbklUeF.png" />
+                    <h3 className="text-gray-300">Woof</h3>
+                </div>
+
+
+            </aside>
+        </div>
+          
+
+            <section className="flex p-8 h-full w-full items-center justify-center">
+
+                <div className="flex flex-col">
+
+                    {/* <span>Profile</span>
+                    <span>Pool</span>
+                    <span>Profile Tweet</span>
+                    <span>Tweet</span>
+                    <span>Relevant People</span> */}
+
+                    <div className="space-y-8 flex">
+                        {/* <Profile /> */}
+                        <Tweet />
+                    </div>
+                </div>
+
+
+            </section>
 
             <div className="relative">
                 <aside className="flex flex-col relative overflow-hidden h-full w-[255px] bg-[#000]">
@@ -19,7 +62,7 @@ export default function Editor() {
 
                     <header className="flex flex-row w-full border-b border-gray-700 mb-4">
                     <div className="p-4 flex justify-between items-center w-full">
-                        <h2 className="text-gray-50 font-medium">Settings</h2>
+                        <h2 className="text-gray-50 font-medium">Settings | User Profiles</h2>
                     </div>
                     </header>
 
@@ -89,25 +132,6 @@ export default function Editor() {
                 </div>
                 </aside>
             </div>
-
-            <section className="flex bg-gradient-to-r from-blue-500 to-pink-500 h-full w-full items-center justify-center">
-
-                <div className="flex flex-col">
-
-                    <span>Profile</span>
-                    <span>Pool</span>
-                    <span>Profile Tweet</span>
-                    <span>Tweet</span>
-                    <span>Relevant People</span>
-
-                    <div className="space-y-8 flex">
-                        <Profile />
-                        <Tweet />
-                    </div>
-                </div>
-
-
-            </section>
 
         </main>
         </>
