@@ -1,90 +1,15 @@
 import React, { useState } from 'react';
 import Head from 'next/head'
-import Profile from '../components/templates/Profile'
-import Tweet from '../components/templates/Tweet'
+import Profile from '../../components/templates/Profile'
+import Tweet from '../../components/templates/Tweet'
 
-import profiles from './../json/profiles'; 
-import { useTweetTabs } from '../context/TweetTabsInfo';
-
-const options = [
-    {
-        "id": 'profile',
-        "name": "Profile",
-        "thumbnail": "https://i.imgur.com/naK8pBm.png",
-        "coming_soon": false,
-        "component": <Profile />
-    },
-    {
-        "id": "tweet",
-        "name": "Tweet",
-        "thumbnail": "https://i.imgur.com/UWmMBMa.png",
-        "coming_soon": false,
-        "component": <Tweet  />
-    },
-    {
-        "id": "tweet_single",
-        "name": "Tweet Single",
-        "thumbnail": "https://i.imgur.com/HbklUeF.png",
-        "coming_soon": true,
-    },
-    {
-        "id": 'account_suspended',
-        "name": "Account Suspended",
-        "thumbnail": "https://i.imgur.com/HbklUeF.png",
-        "coming_soon": true,
-    },
-    {
-        "id": "pool",
-        "name": "Pool",
-        "thumbnail": "https://i.imgur.com/HbklUeF.png",
-        "coming_soon": true,
-    },
-    {
-        "id": "relevant_people",
-        "name": "Relevant People",
-        "thumbnail": "https://i.imgur.com/HbklUeF.png",
-        "coming_soon": true,
-    }
-]
-
-
-function Option(props: any) {
-    const option = props.data;
-    const { activeTab, setActiveTab } = useTweetTabs();
-
-    return (
-        <div className="p-4 text-center" onClick={() => setActiveTab(option.id)}>
-            <img className="rounded-xl" src={option.thumbnail} />
-            <h3 className="text-gray-300">{option.name}</h3>
-        </div>
-    )
-}
-
-function OptionList() {
-    return (
-        <>
-            {options.map((option) => {
-                return <Option key={option.id} data={option} />
-            })}
-        </>
-    )
-}
+import profiles from '../../json/profiles'; 
+import { useTweetTabs } from '../../context/TweetTabsInfo';
+import OptionView from './_components/Options/OptionView';
+import ContentView from './_components/Content/ContentView';
 
 
 
-function TabContent() {
-    const { activeTab, setActiveTab } = useTweetTabs();
-
-    switch(activeTab) {
-        case 'profile':
-            return <Profile data={profiles[1]} />
-            break;
-        case 'tweet':
-            return <Tweet data={profiles[1]} />
-            break;
-    }
-    
-}
 
 
 export default function Editor() {
@@ -104,19 +29,12 @@ export default function Editor() {
 
             <div className="relative">
                 <aside className="flex flex-col relative overflow-y-auto h-full w-[255px] bg-[#000]">
-                    <OptionList />
+                    <OptionView />
                 </aside>
             </div>
 
             <section className="flex p-8 h-full w-full items-center justify-center">
-                <div className="flex flex-col">
-
-                    <div className="space-y-8 flex">
-                        <TabContent />
-                        {/* <Profile data={currentProfile} /> */}
-                        {/* <Tweet data={currentProfile} /> */}
-                    </div>
-                </div>
+                <ContentView />
             </section>
 
             <div className="relative">

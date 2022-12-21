@@ -1,0 +1,77 @@
+import Profile from "../../../../components/templates/Profile";
+import Tweet from "../../../../components/templates/Tweet";
+import { useTweetTabs } from "../../../../context/TweetTabsInfo";
+
+const options = [
+    {
+        "id": 'profile',
+        "name": "Profile",
+        "thumbnail": "https://i.imgur.com/naK8pBm.png",
+        "coming_soon": false,
+        // "component": <Profile />
+    },
+    {
+        "id": "tweet",
+        "name": "Tweet",
+        "thumbnail": "https://i.imgur.com/UWmMBMa.png",
+        "coming_soon": false,
+        // "component": <Tweet  />
+    },
+    {
+        "id": "tweet_single",
+        "name": "Tweet Single",
+        "thumbnail": "https://i.imgur.com/HbklUeF.png",
+        "coming_soon": true,
+    },
+    {
+        "id": 'account_suspended',
+        "name": "Account Suspended",
+        "thumbnail": "https://i.imgur.com/HbklUeF.png",
+        "coming_soon": true,
+    },
+    {
+        "id": "pool",
+        "name": "Pool",
+        "thumbnail": "https://i.imgur.com/HbklUeF.png",
+        "coming_soon": true,
+    },
+    {
+        "id": "relevant_people",
+        "name": "Relevant People",
+        "thumbnail": "https://i.imgur.com/HbklUeF.png",
+        "coming_soon": true,
+    }
+]
+
+function Option(props: any) {
+    const option = props.data;
+    const { activeTab, setActiveTab } = useTweetTabs();
+
+    if(option.coming_soon === true) 
+    return (
+        <div>
+            <div className="p-4 text-center">
+            <img className="rounded-xl" src={option.thumbnail} />
+            <h3 className="text-gray-300">{option.name} <br/>(Coming Soon)</h3>
+        </div>
+        </div>
+    )
+    return (
+        <div className="p-4 text-center" onClick={() => setActiveTab(option.id)}>
+            <img className="rounded-xl" src={option.thumbnail} />
+            <h3 className="text-gray-300">{option.name}</h3>
+        </div>
+    )
+}
+
+function OptionView() {
+    return (
+        <>
+            {options.map((option) => {
+                return <Option key={option.id} data={option} />
+            })}
+        </>
+    )
+}
+
+export default OptionView;
