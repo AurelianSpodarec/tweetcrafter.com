@@ -1,26 +1,28 @@
 import Stat from "../atoms/Stat"
+import TweetImage from "../atoms/TweetImage";
 import TweetTextarea from "../atoms/TweetTextarea"
 import AvatarName from "../molecules/AvatarName"
 
 function Tweet(props:TweetProps) {
     const { data: { 
-         name, 
-         handler, 
-         screen_name, 
-         profile_image_url
+        id,
+        name, 
+        handler, 
+        screen_name, 
+        profile_image_url
     } } = props;
 
     return (
-        <article className="max-w-[598px] bg-[#000000] p-4">
-            <AvatarName name={name} handler={handler} src={profile_image_url} />
+        <article id={id} className="max-w-[598px] bg-[#000000] p-4">
+            <AvatarName name={name} handler={handler} src={profile_image_url} verified="person" />
 
             <section>
                 <TweetTextarea />
-                {/* <img className="mt-4 rounded-2xl" src="https://c4.wallpaperflare.com/wallpaper/327/414/565/winter-snow-ice-dog-icicles-hd-wallpaper-preview.jpg" /> */}
+                <TweetImage />
             </section>
 
             <footer>
-                <time dateTime="2022-12-19T12:06:26.000Z" className="text-[#71767b] py-4 block" style={{"fontSize": "15px"}}>
+                <time contentEditable dateTime="2022-12-19T12:06:26.000Z" className="text-[#71767b] py-4 block" style={{"fontSize": "15px"}}>
                     12:06 PM · Dec 19, 2022
                 </time>
                 <div className="flex space-x-6">
@@ -37,6 +39,7 @@ export default Tweet;
 
 interface TweetProps {
     data: {
+        id: string;
         name: string;
         screen_name: string;
         handler: string;

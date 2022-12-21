@@ -4,13 +4,14 @@ import { useTweetTabs } from "../../../../context/TweetTabsInfo";
 import profiles from "../../../../json/profiles";
 
 function ContentView() {
-    const { activeTab, setActiveTab } = useTweetTabs();
-    
+    const { activeTab, setActiveTab, mainProfile } = useTweetTabs();
+
+
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col rounded-xl overflow-hidden">
             <div className="space-y-8 flex">
-                {activeTab === 'profile' && <Profile data={profiles[1]} />}
-                {activeTab === 'tweet' && <Tweet data={profiles[1]} />}
+                {activeTab === 'profile' && <Profile data={mainProfile} />}
+                {activeTab === 'tweet' && <Tweet data={mainProfile} />}
             </div>
         </div>
     )

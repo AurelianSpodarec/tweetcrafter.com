@@ -2,7 +2,7 @@ import Avatar from "../atoms/Avatar";
 import NameHandler from "../atoms/HandlerName";
 import VerifiedBadge from "../atoms/VerifiedBadge";
 
-function AvatarName({src, name, handler}:AvatarNameProps) {
+function AvatarName({src, name, handler, verified}:AvatarNameProps) {
     console.log(src )
     return (
         <header className="flex space-x-3 mb-4">
@@ -12,7 +12,7 @@ function AvatarName({src, name, handler}:AvatarNameProps) {
                 <div className="flex flex-col">
                     <div className="flex items-center space-x-0.5">
                         <span className="font-bold text-[#e7e9ea]">{name}</span>
-                        <VerifiedBadge type="person" />
+                        <VerifiedBadge verified={verified} />
                     </div>
                     <NameHandler handler={handler} />
                 </div>
@@ -27,4 +27,5 @@ interface AvatarNameProps {
     src?: string;
     name: string;
     handler: string;
+    verified?: "person" | "business" | "gov";
 }

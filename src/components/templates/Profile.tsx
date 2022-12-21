@@ -6,6 +6,7 @@ function Profile(props:any) {
     const { data: { 
         name, 
         handler, 
+        verified,
         screen_name, 
         profile_image_url
    } } = props;
@@ -18,7 +19,7 @@ function Profile(props:any) {
             <section className="p-4">
                 <div style={{ "marginTop": "-15%" }}>
                     <Avatar src={profile_image_url} size="lg"  />
-                    <AvatarName name={name} handler={handler} />
+                    <AvatarName name={name} handler={handler} verified={verified} />
                 </div>
 
                 <div className="text-gray-300">
