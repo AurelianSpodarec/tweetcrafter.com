@@ -2,10 +2,17 @@ import Stat from "../atoms/Stat"
 import TweetTextarea from "../atoms/TweetTextarea"
 import AvatarName from "../molecules/AvatarName"
 
-function Tweet() {
+function Tweet(props:TweetProps) {
+    const { data: { 
+         name, 
+         handler, 
+         screen_name, 
+         profile_image_url
+    } } = props;
+
     return (
         <article className="max-w-[598px] bg-[#000000] p-4">
-            <AvatarName name="Kim Dotcom" handler="KimDotcom" src="https://pbs.twimg.com/profile_images/2320423543/9qheijpvtu9g5dteqvvw_400x400.jpeg" />
+            <AvatarName name={name} handler={handler} src={profile_image_url} />
 
             <section>
                 <TweetTextarea />
@@ -27,3 +34,12 @@ function Tweet() {
 }
 
 export default Tweet;
+
+interface TweetProps {
+    data: {
+        name: string;
+        screen_name: string;
+        handler: string;
+        profile_image_url: string;
+    }
+}

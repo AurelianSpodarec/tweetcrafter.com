@@ -1,15 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image' 
 import Tweet from '../components/templates/Tweet';
+import profiles from './../json/profiles';
 
 import { Fragment } from 'react' 
 
 const navigation = [
-{ name: 'Product', href: '#' },
-{ name: 'Features', href: '#' },
-{ name: 'Marketplace', href: '#' },
+{ name: 'Tweet Crafter', href: '/editor' },
+{ name: 'About', href: '#' },
+{ name: 'FAQ', href: '#' },
 { name: 'Company', href: '#' },
 ]
+
+// about - elon musk picture and worship poem
+
 
 const footerNavigation = {
     main: [
@@ -170,7 +174,7 @@ export default function Home() {
             <div className="mt-16 sm:mt-24 lg:col-span-6 lg:mt-0">
                     
                     <span>Click to what you want edit and download</span>
-                    <Tweet />
+                    <Tweet data={profiles[1]} />
                 
                 </div>
             </div>

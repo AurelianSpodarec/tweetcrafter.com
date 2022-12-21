@@ -1,8 +1,91 @@
+import React, { useState } from 'react';
 import Head from 'next/head'
 import Profile from '../components/templates/Profile'
 import Tweet from '../components/templates/Tweet'
 
+import profiles from './../json/profiles'; 
+import { useTweetTabs } from '../context/TweetTabsInfo';
+
+const options = [
+    {
+        "id": 'profile',
+        "name": "Profile",
+        "thumbnail": "https://i.imgur.com/naK8pBm.png",
+        "coming_soon": false,
+        "component": <Profile />
+    },
+    {
+        "id": "tweet",
+        "name": "Tweet",
+        "thumbnail": "https://i.imgur.com/UWmMBMa.png",
+        "coming_soon": false,
+        "component": <Tweet  />
+    },
+    {
+        "id": "tweet_single",
+        "name": "Tweet Single",
+        "thumbnail": "https://i.imgur.com/HbklUeF.png",
+        "coming_soon": true,
+    },
+    {
+        "id": 'account_suspended',
+        "name": "Account Suspended",
+        "thumbnail": "https://i.imgur.com/HbklUeF.png",
+        "coming_soon": true,
+    },
+    {
+        "id": "pool",
+        "name": "Pool",
+        "thumbnail": "https://i.imgur.com/HbklUeF.png",
+        "coming_soon": true,
+    },
+    {
+        "id": "relevant_people",
+        "name": "Relevant People",
+        "thumbnail": "https://i.imgur.com/HbklUeF.png",
+        "coming_soon": true,
+    }
+]
+
+
+function Option(props: any) {
+    const option = props.data;
+    const { activeTab, setActiveTab } = useTweetTabs();
+
+    return (
+        <div className="p-4 text-center" onClick={() => setActiveTab(option.id)}>
+            <img className="rounded-xl" src={option.thumbnail} />
+            <h3 className="text-gray-300">{option.name}</h3>
+        </div>
+    )
+}
+
+function OptionList() {
+    return (
+        <>
+            {options.map((option) => {
+                return <Option key={option.id} data={option} />
+            })}
+        </>
+    )
+}
+
+function TabContent() {
+    const { activeTab, setActiveTab } = useTweetTabs();
+
+    return (
+        <div>
+            
+        {activeTab === 'profile' ? <Profile data={profiles[1]} /> : "hi"}
+        </div>
+    )
+}
+
+
 export default function Editor() {
+    const [currentProfile, setCurrentProfile] = useState(profiles[1]);
+    const [currentTweetType, setCurrentTweetType] = useState(1);
+
     return (
         <>
         <Head>
@@ -11,49 +94,24 @@ export default function Editor() {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
         </Head>
+
         <main className="flex h-full bg-gradient-to-r from-blue-500 to-pink-500 ">
 
-        <div className="relative">
-            <aside className="flex flex-col relative overflow-hidden h-full w-[255px] bg-[#000]">
-                
-             
-                <div className="p-4 text-center">
-                    <img className="rounded-xl" src="https://i.imgur.com/naK8pBm.png" />
-                    <h3 className="text-gray-300">Profile</h3>
-                </div>
-
-                <div className="p-4 text-center">
-                    <img className="rounded-xl" src="https://i.imgur.com/UWmMBMa.png" />
-                    <h3 className="text-gray-300">Tweet</h3>
-                </div>
-
-                <div className="p-4 text-center">
-                    <img className="rounded-xl" src="https://i.imgur.com/HbklUeF.png" />
-                    <h3 className="text-gray-300">Woof</h3>
-                </div>
-
-
-            </aside>
-        </div>
-          
+            <div className="relative">
+                <aside className="flex flex-col relative overflow-y-auto h-full w-[255px] bg-[#000]">
+                    <OptionList />
+                </aside>
+            </div>
 
             <section className="flex p-8 h-full w-full items-center justify-center">
-
                 <div className="flex flex-col">
 
-                    {/* <span>Profile</span>
-                    <span>Pool</span>
-                    <span>Profile Tweet</span>
-                    <span>Tweet</span>
-                    <span>Relevant People</span> */}
-
                     <div className="space-y-8 flex">
-                        {/* <Profile /> */}
-                        <Tweet />
+                        <TabContent />
+                        {/* <Profile data={currentProfile} /> */}
+                        {/* <Tweet data={currentProfile} /> */}
                     </div>
                 </div>
-
-
             </section>
 
             <div className="relative">
@@ -94,7 +152,7 @@ export default function Editor() {
                             </div>
                         </div>
 
-
+Content
                         <div className="text-gray-300 p-4">
                             <h3>Profile</h3>
                             <div>
@@ -102,6 +160,7 @@ export default function Editor() {
                                 <div>Fact Check Warning: Yes/No</div>
                             </div>
                         </div>
+                        add image
 
                         <div className="text-gray-300 p-4">
                             <h3>Theme</h3> 

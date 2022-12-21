@@ -2,7 +2,14 @@ import Avatar from "../atoms/Avatar"
 import Stat from "../atoms/Stat"
 import AvatarName from "../molecules/AvatarName"
 
-function Profile() {
+function Profile(props:any) {
+    const { data: { 
+        name, 
+        handler, 
+        screen_name, 
+        profile_image_url
+   } } = props;
+
     return (
         <article className="bg-black">
             <div>
@@ -10,8 +17,8 @@ function Profile() {
             </div>
             <section className="p-4">
                 <div style={{ "marginTop": "-15%" }}>
-                    <Avatar src="https://pbs.twimg.com/profile_images/2320423543/9qheijpvtu9g5dteqvvw_400x400.jpeg" size="lg"  />
-                    <AvatarName name="Kim Dotcom" handler="KimDotcom" />
+                    <Avatar src={profile_image_url} size="lg"  />
+                    <AvatarName name={name} handler={handler} />
                 </div>
 
                 <div className="text-gray-300">

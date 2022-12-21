@@ -19,7 +19,8 @@ function Avatar({
         default:
             avatarSize = 48;
     }
-    if(src === undefined || src === "") return <></>
+    if(src === "") return <></>
+    if(src !== undefined)
     return (
         <img 
             src={src}
