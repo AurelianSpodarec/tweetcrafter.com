@@ -11,7 +11,7 @@ function Profile(props:any) {
    } } = props;
 
     return (
-        <article className="bg-black">
+        <article className="bg-black max-w-[598px]">
             <div>
                 <img src="https://pbs.twimg.com/profile_banners/2474749586/1654876130/1080x360" />
             </div>
@@ -22,7 +22,7 @@ function Profile(props:any) {
                 </div>
 
                 <div className="text-gray-300">
-                    <p>Pro-civilization : Time, "Hero of the Environment" : Bestselling author of "Apocalypse Never" & "San Fransicko" : Green Book Award : MD = my initials. Not a doc</p>
+                    <p style={{ "fontSize": "15px"}}>Pro-civilization : Time, "Hero of the Environment" : Bestselling author of "Apocalypse Never" & "San Fransicko" : Green Book Award : MD = my initials. Not a doc</p>
                 </div>
 
 

@@ -70,15 +70,20 @@ function OptionList() {
     )
 }
 
+
+
 function TabContent() {
     const { activeTab, setActiveTab } = useTweetTabs();
 
-    return (
-        <div>
-            
-        {activeTab === 'profile' ? <Profile data={profiles[1]} /> : "hi"}
-        </div>
-    )
+    switch(activeTab) {
+        case 'profile':
+            return <Profile data={profiles[1]} />
+            break;
+        case 'tweet':
+            return <Tweet data={profiles[1]} />
+            break;
+    }
+    
 }
 
 
