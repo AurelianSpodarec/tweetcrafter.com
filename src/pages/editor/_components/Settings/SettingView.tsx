@@ -24,7 +24,7 @@ const ProfileList = () => (
     </ul> 
 );
 
- 
+
 function SettingList() {
     return (
         <div>
@@ -96,26 +96,62 @@ Content
 function SettingView() {
     const [activeTab, setActiveTab] = useState('settings');
 
-     
+    const tabs = [
+        {
+            name: 'Type',
+            component: <OptionView />
+        },
+        {
+            name: 'Settings',
+            component: <SettingList />
+        },
+        {
+            name: 'Profiles',
+            component: <ProfileList />
+        }
+    ];
+
+    function renderTabs() {
+        return tabs.map(tab => (
+            <div
+                className={
+                    activeTab === tab.name.toLowerCase()
+                    ? 'bg-indigo-500 text-gray-50 font-medium'
+                    : 'text-gray-50 font-medium'
+                }
+                onClick={() => setActiveTab(tab.name.toLowerCase())}
+            >
+            {tab.name}
+            </div>
+        ));
+    }
+
     return (
         <div className="flex flex-col flex-1 overflow-hidden">
 
             <header className="flex flex-row w-full border-b border-gray-700 mb-4">
             <div className="p-4 flex justify-between items-center w-full">
-                <div className={activeTab === 'type' ? 'bg-indigo-500 text-gray-50 font-medium' : "text-gray-50 font-medium"} onClick={() => setActiveTab('type')}>Type</div>
-                <div className={activeTab === 'settings' ? 'bg-indigo-500 text-gray-50 font-medium' :  "text-gray-50 font-medium"} onClick={() => setActiveTab('settings')}>Settings</div>
-                <div className={activeTab === 'profiles' ? 'bg-indigo-500 text-gray-50 font-medium' :  "text-gray-50 font-medium"} onClick={() => setActiveTab('profiles')}>Profiles</div>
+                {renderTabs()}
             </div>
             </header>
 
             <div className="overflow-y-auto">
-                { activeTab === "profiles" && <ProfileList /> }
-                { activeTab === "settings" && <SettingList /> }
-                { activeTab === "type" && <OptionView /> }
+            {(() => {
+                switch (activeTab) {
+                case 'profiles':
+                    return <ProfileList />;
+                case 'settings':
+                    return <SettingList />;
+                case 'type':
+                    return <OptionView />;
+                default:
+                    return null;
+                }
+            })()}
             </div>
-
+            
         </div>
-    )
+    );
 }
 
 export default SettingView;

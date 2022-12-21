@@ -19,27 +19,38 @@ export default function Editor() {
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <main className="flex h-full bg-gradient-to-r from-blue-500 to-pink-500 ">
+        <div className="relative overflow-y-hidden h-screen">
+        <div className="flex flex-col h-full overflow-hidden">
 
-            {/* <div className="relative">
-                <aside className="flex flex-col relative sidebar-scrollbar overflow-y-auto h-full w-[255px] bg-[#000]">
-                    <OptionView />
-                </aside>
-            </div> */}
+            <nav className="bg-black w-full flex justify-between items-center">
+                <div className="p-2">
+                    <h1 className="text-2xl text-gray-300 font-bold">TweetCrafter</h1>
+                </div>
+                <div className="space-x-2">
+                <button className="text-gray-300 bg-indigo-500 rounded-sm text-sm px-3 py-1 w-auto">Share</button>
+                    <button className="text-gray-300 bg-indigo-500 rounded-sm text-sm px-3 py-1 w-auto">Preview Image</button>
+                    <button className="text-gray-300 bg-indigo-500 rounded-sm text-sm px-3 py-1 w-auto">Download Image</button>
+                </div>
+            </nav>
 
-            <div className="relative">
+            <main className="flex flex-row h-full overflow-hidden relative bg-gradient-to-r from-blue-500 to-pink-500 ">
+                <div className="relative ">
                 <aside className="flex flex-col relative overflow-hidden h-full w-[255px] bg-[#000]">
-                    <SettingView />
+                    <div className="overflow-y-auto">
+                        <SettingView />
+                    </div>
                 </aside>
-            </div>
+                </div>
+ 
+                <section className="relative overflow-y-auto h-full w-full">
+                <div  className="relative flex overflow-y-auto h-full w-full items-center justify-center">
+                    <ContentView />
+                </div> 
+                </section>
+            </main>
 
-
-            <section className="flex p-8 h-full w-full items-center justify-center">
-                <ContentView />
-            </section>
-
-          
-        </main>
+        </div>
+        </div>
         </>
     )
 }

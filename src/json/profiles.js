@@ -14,8 +14,8 @@ export default [
         "favourites_count": 6,
         "statuses_count": 85,
         "created_at": "Mon Nov 29 21:18:15 +0000 2010",
-        "profile_banner_url": "https://si0.twimg.com/profile_banners/819797/1348102824",
-        "profile_image_url": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png"
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/44196397/1576183471/1080x360",
+        "profile_image_url": "https://pbs.twimg.com/profile_images/1590968738358079488/IY9Gx6Ok_400x400.jpg"
     },
     {
         "id": 2,
@@ -32,7 +32,7 @@ export default [
         "favourites_count": 6,
         "statuses_count": 85,
         "created_at": "Mon Nov 29 21:18:15 +0000 2010",
-        "profile_banner_url": "https://si0.twimg.com/profile_banners/819797/1348102824",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/2474749586/1654876130/1080x360",
         "profile_image_url": "https://pbs.twimg.com/profile_images/2320423543/9qheijpvtu9g5dteqvvw_400x400.jpeg"
     }
 ]

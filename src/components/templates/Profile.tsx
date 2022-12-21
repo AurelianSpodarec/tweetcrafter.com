@@ -8,13 +8,14 @@ function Profile(props:any) {
         handler, 
         verified,
         screen_name, 
-        profile_image_url
+        profile_image_url,
+        profile_banner_url
    } } = props;
 
     return (
         <article className="bg-black max-w-[598px]">
             <div>
-                <img src="https://pbs.twimg.com/profile_banners/2474749586/1654876130/1080x360" />
+                <img src={profile_banner_url} />
             </div>
             <section className="p-4">
                 <div style={{ "marginTop": "-15%" }}>
