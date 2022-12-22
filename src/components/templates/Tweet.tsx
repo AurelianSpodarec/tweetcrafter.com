@@ -9,7 +9,9 @@ function Tweet(props:TweetProps) {
         name, 
         handler, 
         screen_name, 
-        profile_image_url
+        profile_image_url,
+        tweetSrc,
+        text
     } } = props;
 
     return (
@@ -17,8 +19,8 @@ function Tweet(props:TweetProps) {
             <AvatarName name={name} handler={handler} src={profile_image_url} verified="person" />
 
             <section>
-                <TweetTextarea />
-                <TweetImage />
+                <TweetTextarea text={text} />
+                <TweetImage src={tweetSrc} />
             </section>
 
             <footer>
@@ -44,5 +46,7 @@ interface TweetProps {
         screen_name: string;
         handler: string;
         profile_image_url: string;
+        tweetSrc: string;
+        text: string;
     }
 }
