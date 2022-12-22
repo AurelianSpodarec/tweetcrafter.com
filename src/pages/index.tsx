@@ -203,7 +203,9 @@ export default function Home() {
     <div className="bg-white">
       <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <p className="text-center text-lg font-semibold text-gray-600">
-          Trusted by over 100+ BIGGEST <img className="inline-block h-4" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/322/flag-united-states_1f1fa-1f1f8.png" /> and BEST companies... or so do we claim
+          Trusted by over 100+ BIGGEST <img className="inline-block h-4" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/322/flag-united-states_1f1fa-1f1f8.png" /> and BEST companies... 
+          or so do we claim
+          {/* or at least that's what we tell ourselves */}
         </p>
         <div className="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
 

@@ -9,7 +9,7 @@ function ContentView() {
 
     return (
         <div className="flex flex-col rounded-xl overflow-hidden">
-            <div className="space-y-8 flex">
+            <div className="theme-twitter-dark space-y-8 flex">
                 {activeTab === 'profile' && <Profile data={mainProfile} />}
                 {activeTab === 'tweet' && <Tweet data={mainProfile} />}
             </div>

@@ -43,7 +43,7 @@ export default function Editor() {
                 </div>
  
                 <section className="relative overflow-y-auto h-full w-full">
-                <div  className="relative flex overflow-y-auto h-full w-full items-center justify-center">
+                <div className="relative flex overflow-y-auto h-full w-full items-center justify-center">
                     <ContentView />
                 </div> 
                 </section>
