@@ -4,12 +4,12 @@ import { useTweetTabs } from "../../../../context/TweetTabsInfo";
 import profiles from "../../../../json/profiles";
 
 function ContentView() {
-    const { activeTab, setActiveTab, mainProfile, twitterTheme } = useTweetTabs();
+    const { activeTab, setActiveTab, mainProfile, twitterTheme, twitterPrimaryColor } = useTweetTabs();
 
 
     return (
         <div className="flex flex-col rounded-xl overflow-hidden">
-            <div className={`theme-twitter-${twitterTheme} space-y-8 flex`}>
+            <div className={`theme-twitter-primary-${twitterPrimaryColor} theme-twitter-${twitterTheme} space-y-8 flex`}>
                 {activeTab === 'profile' && <Profile data={mainProfile} />}
                 {activeTab === 'tweet' && <Tweet data={mainProfile} />}
             </div>

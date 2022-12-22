@@ -10,6 +10,7 @@ function TweetTabsProvider({ children }: any) {
     const [activeTab, setActiveTab] = useState('profile');
     const [mainProfile, setMainProfile] = useState(profiles[1])
     const [twitterTheme, setTwitterTheme] = useState('lights-out')
+    const [twitterPrimaryColor, setTwitterPrimaryColor] = useState('1');
 
     function setMainProfileTo(id:number) {
         // if(profiles.length !== id) return
@@ -20,6 +21,10 @@ function TweetTabsProvider({ children }: any) {
         setTwitterTheme(theme)
     }
 
+    function SetTwitterPrimaryColorTo(color:any) {
+        setTwitterPrimaryColor(color)
+    }
+
     const value = { 
         activeTab, 
         setActiveTab,
@@ -27,7 +32,9 @@ function TweetTabsProvider({ children }: any) {
         setMainProfile,
         setMainProfileTo,
         twitterTheme,
-        setTwitterThemeTo
+        setTwitterThemeTo,
+        twitterPrimaryColor,
+        SetTwitterPrimaryColorTo
     };
 
     return <TweetTabsContext.Provider value={value}>{children}</TweetTabsContext.Provider>;

@@ -20,6 +20,7 @@ module.exports = {
       extend: {
         textColor: {
           skin: {
+            accent: withOpacity('--color-accent'),
             base: withOpacity('--color-text-base'),
             leading: withOpacity('--color-text-leading'),
             muted: withOpacity('--color-text-muted'),
@@ -28,6 +29,7 @@ module.exports = {
         },
         backgroundColor: {
           skin: {
+            accent: withOpacity('--color-accent'),
             base: withOpacity('--color-bg-base'),
           }
         }

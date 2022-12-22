@@ -15,11 +15,11 @@ function Tweet(props:TweetProps) {
     } } = props;
 
     return (
-        <article id={id} className="max-w-[598px] color-bg-base p-4">
+        <article id={id} className="max-w-[598px] bg-skin-base p-4">
             <AvatarName name={name} handler={handler} src={profile_image_url} verified="person" />
 
             <section>
-                <TweetTextarea text={text} />
+                <TweetTextarea text="Hey @elonmusk,  it’s unwise to run a poll like this when you are now deep state enemy #1. They have the biggest bot army on Twitter. They have 100k ‘analysts’ with 30-40 accounts all voting against you. Let’s clean up and then run this poll again. The majority has faith in you. 😘" />
                 <TweetImage src={tweetSrc} />
             </section>
 
