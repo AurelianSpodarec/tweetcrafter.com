@@ -5,10 +5,11 @@ import profiles from '../../json/profiles';
 import OptionView from './_components/Options/OptionView';
 import ContentView from './_components/Content/ContentView';
 import SettingView from './_components/Settings/SettingView';
+import { useTweetTabs } from '../../context/TweetTabsInfo';
 
 
 export default function Editor() {
- 
+    const { setTwitterThemeTo } = useTweetTabs();
 
     return (
         <>
@@ -26,8 +27,15 @@ export default function Editor() {
                 <div className="p-2">
                     <h1 className="text-2xl text-gray-300 font-bold">TweetCrafter</h1>
                 </div>
-                <div className="space-x-2">
-                <button className="text-gray-300 bg-indigo-500 rounded-sm text-sm px-3 py-1 w-auto">Share</button>
+                <div className="space-x-2 flex">
+
+                    <div className="flex">
+                        <button onClick={() => setTwitterThemeTo('default')} className="text-gray-300 bg-gray-500 rounded-sm text-sm px-3 py-1 w-auto">Default</button>
+                        <button onClick={() => setTwitterThemeTo('dim')} className="text-gray-300 bg-gray-500 rounded-sm text-sm px-3 py-1 w-auto">Dim</button>
+                        <button onClick={() => setTwitterThemeTo('lights-out')} className="text-gray-300 bg-gray-500 rounded-sm text-sm px-3 py-1 w-auto">Lights Out</button>
+                    </div>
+
+                    <button className="text-gray-300 bg-indigo-500 rounded-sm text-sm px-3 py-1 w-auto">Share</button>
                     <button className="text-gray-300 bg-indigo-500 rounded-sm text-sm px-3 py-1 w-auto">Preview Image</button>
                     <button className="text-gray-300 bg-indigo-500 rounded-sm text-sm px-3 py-1 w-auto">Download Image</button>
                 </div>

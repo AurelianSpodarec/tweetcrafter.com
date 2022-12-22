@@ -3,12 +3,14 @@
 // ==========================================================================
 
 
-@layer base {
+ 
     :root{
-        --brand-color: blue;
-        --color-text-base: red;
-        --color-text-muted: red;
-        --color-background: black;
+        --color-bg-base: 255, 255, 255;
+        // --brand-color: blue;
+        // --color-text-base: red;
+        // --color-text-muted: red;
+        // --color-background: black;
+        // --color-bg-base: 255, 255, 255;
     }
 
     .theme-main-light {
@@ -18,16 +20,16 @@
 
     }
 
-    .theme-twitter-light {
+    .theme-twitter-default {
         --color-bg-base: 255, 255, 255;
     }
     .theme-twitter-dim {
-
+        --color-bg-base: 21, 32, 43;
     }
-    .theme-twitter-dark {
+    .theme-twitter-lights-out {
         --color-bg-base: 0, 0, 0;
     }
-}
+
 
 // :root {
 //     --color-text-base: 255, 255, 255;
