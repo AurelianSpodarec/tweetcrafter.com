@@ -6,6 +6,7 @@ import OptionView from '../Options/OptionView';
 
 
 function ProfileItem({profile}:any) {
+     // @ts-ignore
     const { activeTab, setActiveTab, setMainProfileTo } = useTweetTabs();
 
     return (
@@ -121,8 +122,9 @@ function SettingView() {
     ];
 
     function renderTabs() {
-        return tabs.map(tab => (
+        return tabs.map((tab, index) => (
             <div
+                key={index}
                 className={
                     activeTab === tab.name.toLowerCase()
                     ? 'bg-indigo-500 text-gray-50 font-medium'

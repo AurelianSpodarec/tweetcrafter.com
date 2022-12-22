@@ -9,6 +9,7 @@ import { useTweetTabs } from '../../context/TweetTabsInfo';
 
 
 export default function Editor() {
+     // @ts-ignore
     const { twitterTheme, setTwitterThemeTo, twitterPrimaryColor, SetTwitterPrimaryColorTo } = useTweetTabs();
     // const { activeTab, setActiveTab, mainProfile, twitterTheme } = useTweetTabs();
     return (

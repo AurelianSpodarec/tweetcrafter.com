@@ -15,7 +15,7 @@ function Tweet(props:TweetProps) {
     } } = props;
 
     return (
-        <article id={id} className="max-w-[598px] bg-skin-base p-4">
+        <article className="max-w-[598px] bg-skin-base p-4">
             <AvatarName name={name} handler={handler} src={profile_image_url} verified="person" />
 
             <section>
@@ -41,7 +41,7 @@ export default Tweet;
 
 interface TweetProps {
     data: {
-        id: string;
+        id: string | number;
         name: string;
         screen_name: string;
         handler: string;

@@ -4,6 +4,7 @@ import { useTweetTabs } from "../../../../context/TweetTabsInfo";
 import profiles from "../../../../json/profiles";
 
 function ContentView() {
+    // @ts-ignore
     const { activeTab, setActiveTab, mainProfile, twitterTheme, twitterPrimaryColor } = useTweetTabs();
 
 

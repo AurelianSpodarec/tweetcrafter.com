@@ -24,7 +24,9 @@ function Profile(props:any) {
                 </div>
 
                 <div className="text-gray-300">
-                    <p className="text-skin-base" style={{ "fontSize": "15px"}}>Pro-civilization : Time, "Hero of the Environment" : Bestselling author of "Apocalypse Never" & "San Fransicko" : Green Book Award : MD = my initials. Not a doc</p>
+                    <p className="text-skin-base" style={{ "fontSize": "15px"}}>
+                        {/* Pro-civilization : Time, "Hero of the Environment" : Bestselling author of "Apocalypse Never" & "San Fransicko" : Green Book Award : MD = my initials. Not a doc */}
+                    </p>
                 </div>
 
 
@@ -48,7 +50,7 @@ function Profile(props:any) {
                     <Stat amount="122.3M" name="Followers" />
                 </div>
 
-                <p className="text-skin-muted text-xs">Not followed by anyone you’re following</p>
+                <p className="text-skin-muted text-xs">Not followed by anyone you{'’'}re following</p>
             </section>
         </article>
     )

@@ -175,7 +175,7 @@ export default function Home() {
                                 Go Editor
                             </button>
                             <button className="items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg">
-                                Download Image ->
+                                Download Image 
                             </button>
                         </div>
 
@@ -185,6 +185,7 @@ export default function Home() {
                     <div className="mt-16 sm:mt-24 lg:mt-0">
                         {/* <div className="shadow-2xl"> */}
                         <div className="overflow-hidden rounded-2xl">
+                            
                             <Tweet data={publicProfile} />            
                             {/* </div> */}
                         </div>
