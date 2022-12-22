@@ -21,7 +21,8 @@ module.exports = {
         textColor: {
           skin: {
             base: withOpacity('--color-text-base'),
-            muted: '',
+            leading: withOpacity('--color-text-leading'),
+            muted: withOpacity('--color-text-muted'),
             inverted: '',
           }
         },

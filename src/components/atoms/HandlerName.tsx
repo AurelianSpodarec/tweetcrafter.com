@@ -1,6 +1,6 @@
 function HandlerName({handler}:HandlerNameProps) {
     return (
-        <span className="text-[#71767b]">@<span>{handler}</span></span>
+        <span className="text-skin-muted">@<span>{handler}</span></span>
     )
 }
 
