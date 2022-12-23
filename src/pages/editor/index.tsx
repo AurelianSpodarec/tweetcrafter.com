@@ -29,7 +29,7 @@ export default function Editor() {
                     <h1 className="text-2xl text-gray-300 font-bold">TweetCrafter</h1>
                 </div>
                 <div className="space-x-2 flex items-center">
-
+move to sidebar and add sizing eg twitter, instagram post etc instead
                     <div className="space-x-2 ">
                         <button onClick={() => SetTwitterPrimaryColorTo("1")} className="h-10 w-10 rounded-full theme-twitter-primary-1 bg-skin-accent"></button>
                         <button onClick={() => SetTwitterPrimaryColorTo("2")} className="h-10 w-10 rounded-full theme-twitter-primary-2 bg-skin-accent"></button>
