@@ -12,6 +12,8 @@ function TweetTabsProvider({ children }: any) {
     const [twitterTheme, setTwitterTheme] = useState('lights-out')
     const [twitterPrimaryColor, setTwitterPrimaryColor] = useState('1');
 
+    // loaded profile, one that you can edit, change etc...
+
     function setMainProfileTo(id:number) {
         // if(profiles.length !== id) return
         setMainProfile(profiles[id - 1])
