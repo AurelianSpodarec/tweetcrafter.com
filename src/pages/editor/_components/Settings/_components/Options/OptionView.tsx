@@ -1,6 +1,6 @@
-import Profile from "../../../../components/templates/Profile";
-import Tweet from "../../../../components/templates/Tweet";
-import { useTweetTabs } from "../../../../context/TweetTabsInfo";
+import Profile from "../../../../../../components/templates/Profile";
+import Tweet from "../../../../../../components/templates/Tweet";
+import { useTweetTabs } from "../../../../../../context/TweetTabsInfo";
 
 const options = [
     {
