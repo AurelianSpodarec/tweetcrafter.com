@@ -17,7 +17,7 @@ function Profile(props:any) {
             <div>
                 <img src={profile_banner_url} />
             </div>
-            <section className="p-4">
+            <section className="pt-3 px-4 pb-0 mb-4">
                 <div style={{ "marginTop": "-15%" }}>
                     <Avatar src={profile_image_url} size="lg"  />
                     <AvatarName name={name} handler={handler} verified={verified} />

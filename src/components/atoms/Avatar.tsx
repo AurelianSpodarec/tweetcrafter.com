@@ -7,7 +7,7 @@ function Avatar({
   const avatarSizes = {
     sm: 20,
     md: 48,
-    lg: 133.5,
+    lg: 142.5,
   };
 
   const avatarSize = avatarSizes[size] || avatarSizes.md;
@@ -17,9 +17,10 @@ function Avatar({
   return (
     <img 
       src={src}
-      className={`${shape === 'rounded' ? 'rounded-full' : ''} h-12 w-12`}
-      style={{ height: `${avatarSize}px`, width: `${avatarSize}px` }}
+      className={`${shape === 'rounded' ? 'rounded-full' : ''} h-12 w-12 relative`}
+      style={{ height: `${avatarSize}px`, width: `${avatarSize}px`, "border": "4px solid black" }}
       alt={alt}
+      
     />
   );
 }

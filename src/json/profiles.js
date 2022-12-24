@@ -32,7 +32,7 @@ export default [
         "favourites_count": 6,
         "statuses_count": 85,
         "created_at": "Mon Nov 29 21:18:15 +0000 2010",
-        "profile_banner_url": "https://pbs.twimg.com/profile_banners/2474749586/1654876130/1080x360",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/611986351/1412730708/1080x360",
         "profile_image_url": "https://pbs.twimg.com/profile_images/2320423543/9qheijpvtu9g5dteqvvw_400x400.jpeg"
     }
 ]

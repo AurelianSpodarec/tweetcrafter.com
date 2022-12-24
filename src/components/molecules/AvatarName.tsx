@@ -11,7 +11,7 @@ function AvatarName({src, name, handler, verified}:AvatarNameProps) {
             <div className="flex flex-col">
                 <div className="flex flex-col">
                     <div className="flex items-center space-x-0.5">
-                        <span className="text-skin-base font-extrabold">{name}</span>
+                        <span className="text-skin-base text-xl font-extrabold">{name}</span>
                         <VerifiedBadge verified={verified} />
                     </div>
                     <NameHandler handler={handler} />
