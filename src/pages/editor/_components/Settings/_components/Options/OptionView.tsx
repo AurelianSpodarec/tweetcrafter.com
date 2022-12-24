@@ -18,10 +18,10 @@ const options = [
         // "component": <Tweet  />
     },
     {
-        "id": "tweet_single",
-        "name": "Tweet Single",
-        "thumbnail": "https://i.imgur.com/HbklUeF.png",
-        "coming_soon": true,
+        "id": "reply",
+        "name": "Reply",
+        "thumbnail": "https://i.imgur.com/UWmMBMa.png",
+        "coming_soon": false,
     },
     {
         "id": 'account_suspended',

@@ -1,4 +1,5 @@
 import Profile from "../../../../components/templates/Profile";
+import Reply from "../../../../components/templates/Reply";
 import Tweet from "../../../../components/templates/Tweet";
 import { useTweetTabs } from "../../../../context/TweetTabsInfo";
 import profiles from "../../../../json/profiles";
@@ -13,6 +14,7 @@ function ContentView() {
             <div className={`theme-twitter-primary-${twitterPrimaryColor} theme-twitter-${twitterTheme} space-y-8 flex`}>
                 {activeTab === 'profile' && <Profile data={mainProfile} />}
                 {activeTab === 'tweet' && <Tweet data={mainProfile} />}
+                {activeTab === 'reply' && <Reply />}
             </div>
         </div>
     )
