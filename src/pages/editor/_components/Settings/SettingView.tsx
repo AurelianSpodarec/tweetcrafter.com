@@ -29,8 +29,8 @@ function SettingView() {
                 key={index}
                 className={
                     activeTab === tab.name.toLowerCase()
-                    ? 'border border-transparent border-b-indigo-500 text-gray-50 font-medium'
-                    : 'text-gray-50 font-medium'
+                    ? 'border border-transparent border-b-indigo-500 text-gray-50 font-bold'
+                    : 'text-gray-50 font-semibold'
                 }
                 onClick={() => setActiveTab(tab.name.toLowerCase())}
             >
@@ -40,7 +40,7 @@ function SettingView() {
     }
 
     return (
-        <div className="flex flex-col flex-1 relative overflow-hidden">
+        <div className="flex flex-col flex-1 relative h-full overflow-hidden">
 
             <header className="flex sticky top-0 flex-row w-full border-b border-gray-700 bg-[#2b3140]">
             <div className="p-4 flex justify-between items-center w-full">
@@ -48,7 +48,7 @@ function SettingView() {
             </div>
             </header>
 
-            <div className="overflow-y-auto bg-[#314152]">
+            <div className="overflow-y-auto bg-[#314152] h-full">
             {(() => {
                 switch (activeTab) {
                 case 'profiles':

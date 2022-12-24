@@ -3,7 +3,7 @@ import Head from 'next/head'
  
 import ContentView from './_components/Content/ContentView';
 import SettingView from './_components/Settings/SettingView';
-import HeaderIndex from './Header/HeaderIndex';
+import HeaderIndex from './_components/Header/HeaderIndex';
 
 export default function Editor() {
      // @ts-ignore
@@ -26,7 +26,7 @@ export default function Editor() {
             <main className="flex flex-row h-full overflow-hidden relative bg-gradient-to-r from-blue-500 to-pink-500 ">
                 <div className="relative ">
                 <aside className="flex flex-col relative overflow-hidden h-full w-[295px] bg-[#000]">
-                    <div className="overflow-y-auto">
+                    <div className="overflow-y-auto h-full">
                         <SettingView />
                     </div>
                 </aside>
