@@ -33,7 +33,7 @@ const options = [
         "id": "pool",
         "name": "Pool",
         "thumbnail": "https://i.imgur.com/HbklUeF.png",
-        "coming_soon": true,
+        "coming_soon": false,
     },
     {
         "id": "relevant_people",

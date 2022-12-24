@@ -1,4 +1,5 @@
 import AccountSuspended from "../../../../components/templates/AccountSuspended";
+import Pool from "../../../../components/templates/Pool";
 import Profile from "../../../../components/templates/Profile";
 import Reply from "../../../../components/templates/Reply";
 import Tweet from "../../../../components/templates/Tweet";
@@ -17,6 +18,7 @@ function ContentView() {
                 {activeTab === 'tweet' && <Tweet data={mainProfile} />}
                 {activeTab === 'reply' && <Reply />}
                 {activeTab === 'account_suspended' && <AccountSuspended />}
+                {activeTab === 'pool' && <Pool />}
             </div>
         </div>
     )
