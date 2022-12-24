@@ -26,8 +26,8 @@ const options = [
     {
         "id": 'account_suspended',
         "name": "Account Suspended",
-        "thumbnail": "https://i.imgur.com/HbklUeF.png",
-        "coming_soon": true,
+        "thumbnail": "https://i.imgur.com/UWmMBMa.png",
+        "coming_soon": false,
     },
     {
         "id": "pool",

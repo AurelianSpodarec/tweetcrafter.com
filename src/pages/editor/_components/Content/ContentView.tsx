@@ -1,3 +1,4 @@
+import AccountSuspended from "../../../../components/templates/AccountSuspended";
 import Profile from "../../../../components/templates/Profile";
 import Reply from "../../../../components/templates/Reply";
 import Tweet from "../../../../components/templates/Tweet";
@@ -15,6 +16,7 @@ function ContentView() {
                 {activeTab === 'profile' && <Profile data={mainProfile} />}
                 {activeTab === 'tweet' && <Tweet data={mainProfile} />}
                 {activeTab === 'reply' && <Reply />}
+                {activeTab === 'account_suspended' && <AccountSuspended />}
             </div>
         </div>
     )
