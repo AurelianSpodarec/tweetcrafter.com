@@ -46,32 +46,32 @@ function SettingList() {
             <Widget>
                 <h3 className="text-gray-200 mb-2 font-semibold">Color</h3>
                 <div className="flex flex-wrap space-x-2 text-sm p-2 bg-gray-800 rounded-xl">
-                    <button onClick={() => SetTwitterPrimaryColorTo("1")} className="h-10 w-10 rounded-full theme-twitter-primary-1 bg-skin-accent">
+                    <button onClick={() => SetTwitterPrimaryColorTo("1")} className="h-10 w-10 rounded-xl theme-twitter-primary-1 bg-skin-accent">
                         <div className={`${twitterPrimaryColor === "1" ? "block" : "hidden"} fill-white h-6 w-6 m-auto`}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                         </div>
                     </button>
-                    <button onClick={() => SetTwitterPrimaryColorTo("2")} className="h-10 w-10 rounded-full theme-twitter-primary-2 bg-skin-accent">
+                    <button onClick={() => SetTwitterPrimaryColorTo("2")} className="h-10 w-10 rounded-xl theme-twitter-primary-2 bg-skin-accent">
                         <div className={`${twitterPrimaryColor === "2" ? "block" : "hidden"} fill-white h-6 w-6 m-auto`}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                         </div>
                     </button>
-                    <button onClick={() => SetTwitterPrimaryColorTo("3")} className="h-10 w-10 rounded-full theme-twitter-primary-3 bg-skin-accent">
+                    <button onClick={() => SetTwitterPrimaryColorTo("3")} className="h-10 w-10 rounded-xl theme-twitter-primary-3 bg-skin-accent">
                         <div className={`${twitterPrimaryColor === "3" ? "block" : "hidden"} fill-white h-6 w-6 m-auto`}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                         </div>
                     </button>
-                    <button onClick={() => SetTwitterPrimaryColorTo("4")} className="h-10 w-10 rounded-full theme-twitter-primary-4 bg-skin-accent">
+                    <button onClick={() => SetTwitterPrimaryColorTo("4")} className="h-10 w-10 rounded-xl theme-twitter-primary-4 bg-skin-accent">
                         <div className={`${twitterPrimaryColor === "4" ? "block" : "hidden"} fill-white h-6 w-6 m-auto`}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                         </div>
                     </button>
-                    <button onClick={() => SetTwitterPrimaryColorTo("5")} className="h-10 w-10 rounded-full theme-twitter-primary-5 bg-skin-accent">
+                    <button onClick={() => SetTwitterPrimaryColorTo("5")} className="h-10 w-10 rounded-xl theme-twitter-primary-5 bg-skin-accent">
                         <div className={`${twitterPrimaryColor === "5" ? "block" : "hidden"} fill-white h-6 w-6 m-auto`}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                         </div>
                     </button>
-                    <button onClick={() => SetTwitterPrimaryColorTo("6")} className="h-10 w-10 rounded-full theme-twitter-primary-6 bg-skin-accent">
+                    <button onClick={() => SetTwitterPrimaryColorTo("6")} className="h-10 w-10 rounded-xl theme-twitter-primary-6 bg-skin-accent">
                         <div className={`${twitterPrimaryColor === "6" ? "block" : "hidden"} fill-white h-6 w-6 m-auto`}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                         </div>
@@ -82,9 +82,9 @@ function SettingList() {
             <Widget>
             <h3 className="text-gray-200 mb-2 font-semibold">Theme</h3>
             <div className="flex space-x-2 text-sm bg-[#1e2732] p-2">
-                <button onClick={() => setTwitterThemeTo('default')}  className={`${twitterTheme === 'default' ? "outline outline-orange-700" : ""} bg-white font-bold text-[#0f1419] px-3 py-1`} style={{ "borderColor":"border-color: rgb(51, 54, 57)"}}>Default</button>
-                <button onClick={() => setTwitterThemeTo('dim')} className={`${twitterTheme === 'dim' ? "outline outline-orange-700" : ""} bg-[#15202b] font-bold text-[#f7f9f9] px-3 py-1`} style={{ "borderColor":"border-color: rgb(51, 54, 57)"}}>Dim</button>
-                <button onClick={() => setTwitterThemeTo('lights-out')} className={`${twitterTheme === 'lights-out' ? "outline outline-orange-700" : ""} bg-black font-bold text-[#e7e9ea] px-3 py-1`} style={{ "borderColor":"border-color: rgb(51, 54, 57)"}}>Lights Out</button>
+                <button onClick={() => setTwitterThemeTo('default')}  className={`${twitterTheme === 'default' ? "outline outline-orange-700" : ""} bg-white text-sm font-bold text-[#0f1419] px-3 py-1`} style={{ "borderColor":"border-color: rgb(51, 54, 57)"}}>Default</button>
+                <button onClick={() => setTwitterThemeTo('dim')} className={`${twitterTheme === 'dim' ? "outline outline-orange-700" : ""} bg-[#15202b] text-sm font-bold text-[#f7f9f9] px-3 py-1`} style={{ "borderColor":"border-color: rgb(51, 54, 57)"}}>Dim</button>
+                <button onClick={() => setTwitterThemeTo('lights-out')} className={`${twitterTheme === 'lights-out' ? "outline outline-orange-700" : ""} bg-black text-sm font-bold text-[#e7e9ea] px-3 py-1`} style={{ "borderColor":"border-color: rgb(51, 54, 57)"}}>Lights Out</button>
             </div>
             </Widget>
 
