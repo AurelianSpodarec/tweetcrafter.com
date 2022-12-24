@@ -1,6 +1,7 @@
 import AccountSuspended from "../../../../components/templates/AccountSuspended";
 import Pool from "../../../../components/templates/Pool";
 import Profile from "../../../../components/templates/Profile";
+import RelevantPeople from "../../../../components/templates/RelevantPeople";
 import Reply from "../../../../components/templates/Reply";
 import Tweet from "../../../../components/templates/Tweet";
 import { useTweetTabs } from "../../../../context/TweetTabsInfo";
@@ -15,10 +16,11 @@ function ContentView() {
         <div className="flex flex-col rounded-xl overflow-hidden">
             <div className={`theme-twitter-primary-${twitterPrimaryColor} theme-twitter-${twitterTheme} space-y-8 flex`}>
                 {activeTab === 'profile' && <Profile data={mainProfile} />}
+                {activeTab === 'account_suspended' && <AccountSuspended />}
                 {activeTab === 'tweet' && <Tweet data={mainProfile} />}
                 {activeTab === 'reply' && <Reply />}
-                {activeTab === 'account_suspended' && <AccountSuspended />}
                 {activeTab === 'pool' && <Pool />}
+                {activeTab === 'relevant_people' && <RelevantPeople />}
             </div>
         </div>
     )

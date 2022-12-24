@@ -11,6 +11,12 @@ const options = [
         // "component": <Profile />
     },
     {
+        "id": 'account_suspended',
+        "name": "Account Suspended",
+        "thumbnail": "https://i.imgur.com/UWmMBMa.png",
+        "coming_soon": false,
+    },
+    {
         "id": "tweet",
         "name": "Tweet",
         "thumbnail": "https://i.imgur.com/UWmMBMa.png",
@@ -24,12 +30,6 @@ const options = [
         "coming_soon": false,
     },
     {
-        "id": 'account_suspended',
-        "name": "Account Suspended",
-        "thumbnail": "https://i.imgur.com/UWmMBMa.png",
-        "coming_soon": false,
-    },
-    {
         "id": "pool",
         "name": "Pool",
         "thumbnail": "https://i.imgur.com/HbklUeF.png",
@@ -39,7 +39,7 @@ const options = [
         "id": "relevant_people",
         "name": "Relevant People",
         "thumbnail": "https://i.imgur.com/HbklUeF.png",
-        "coming_soon": true,
+        "coming_soon": false,
     }
 ]
 
