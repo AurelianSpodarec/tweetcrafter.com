@@ -99,7 +99,7 @@ function SettingList() {
                 </div>
             </div> */}
             {/* add image */}
-
+{/* 
             <Widget>
             <div className="text-gray-300">
             <h3 className="text-gray-200 mb-2 font-semibold">Emoj Style</h3>
@@ -109,7 +109,7 @@ function SettingList() {
                     <div>System: 😂😭💀</div>
                 </div>
             </div>
-            </Widget>
+            </Widget> */}
 
             <Widget>
             <div className="text-gray-300">

@@ -13,7 +13,7 @@ function ContentView() {
 
 
     return (
-        <div className="flex flex-col rounded-xl overflow-hidden">
+        <div className="flex flex-col rounded-xl overflow-hidden font-family-chirp">
             <div className={`theme-twitter-primary-${twitterPrimaryColor} theme-twitter-${twitterTheme} space-y-8 flex`}>
                 {activeTab === 'profile' && <Profile data={mainProfile} />}
                 {activeTab === 'account_suspended' && <AccountSuspended />}

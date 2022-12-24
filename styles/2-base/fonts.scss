@@ -18,7 +18,11 @@
 
 @font-face {
     font-family: TwitterChirp;
-    src: url("./../../public/fonts/TwitterChirp/chirp-regular-web.woff") form('woff');
+    src: url("./../../public/fonts/TwitterChirp/chirp-regular-web.woff") format('woff');
     font-weight: 400;
     font-style: normal;
+}
+
+.font-family-chirp {
+    font-family: TwitterChirp;
 }
