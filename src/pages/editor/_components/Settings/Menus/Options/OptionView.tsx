@@ -1,6 +1,7 @@
 import Profile from "../../../../../../components/organisms/Profile";
 import Tweet from "../../../../../../components/organisms/Tweet";
 import { useTweetTabs } from "../../../../../../context/TweetTabsInfo";
+import Drawer from "../../_components/Drawer";
 
 const options = [
     {
@@ -46,7 +47,7 @@ const options = [
 
 function OptionView() {
 
-    function Option(props: any) {
+    function OptionItem(props: any) {
         const option = props.data;
         const { activeTab, setActiveTab } = useTweetTabs();
     
@@ -68,11 +69,11 @@ function OptionView() {
     }
 
     return (
-        <>
+        <Drawer title="Type">
             {options.map((option) => {
-                return <Option key={option.id} data={option} />
+                return <OptionItem key={option.id} data={option} />
             })}
-        </>
+        </Drawer>
     )
 }
 

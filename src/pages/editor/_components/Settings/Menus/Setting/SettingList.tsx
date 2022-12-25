@@ -1,12 +1,6 @@
 import { useTweetTabs } from "../../../../../../context/TweetTabsInfo";
-
-function Widget({children}:any) {
-    return (
-        <div className="p-4">
-            {children}
-        </div>
-    )
-}
+import Drawer from "../../_components/Drawer";
+import Widget from "../../_components/Widget";
 
 function SettingList() {
     // @ts-ignore
@@ -20,19 +14,11 @@ function SettingList() {
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                 </div>
             </button>
-
-            // This animates but above not? huh
-            //  <button onClick={() => SetTwitterPrimaryColorTo("3")} className="h-10 w-10 rounded-xl theme-twitter-primary-3 bg-skin-accent">
-            // <div className={`${twitterPrimaryColor === "3" ? "scale-100 opacity-100" : "scale-75 "} opacity-0 transition ease-in-out duration-150 fill-white h-6 w-6 m-auto`}>
-            //         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
-            //     </div>
-            // </button>
         )
     }
 
     return (
-        <div>
-
+        <Drawer title="Theme">
  
             <Widget>
                 <h3 className="text-gray-200 mb-2 font-semibold">Color</h3>
@@ -72,28 +58,11 @@ function SettingList() {
                         <span>{selectedFont === "system" ? "yes": "no"}</span>
                     </div>
                     </button>
-                    {/* <div>Inter</div> */}
                 </div>
             </div>
             </Widget>
-
-
- 
-{/* 
-            <Widget>
-            <div className="text-gray-300">
-            <h3 className="text-gray-200 mb-2 font-semibold">Emoj Style</h3>
-
-                <div>
-                    <div>Twitter: 😂😭💀</div>
-                    <div>System: 😂😭💀</div>
-                </div>
-            </div>
-            </Widget> */}
-
-         
-
-        </div>
+        
+        </Drawer>
     )
 }
 

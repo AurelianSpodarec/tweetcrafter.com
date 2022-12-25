@@ -1,6 +1,7 @@
 import AvatarName from "../../../../../../components/molecules/AvatarName";
 import { useTweetTabs } from "../../../../../../context/TweetTabsInfo";
 import profiles from "../../../../../../json/profiles";
+import Drawer from "../../_components/Drawer";
 
 
 function ProfileList() {
@@ -17,11 +18,13 @@ function ProfileList() {
     }
 
     return (
+        <Drawer title="Profile List">
         <ul className="theme-twitter-dim">
             {profiles.map(profile => {
                 return <ProfileItem profile={profile} key={profile.id} />
             })}
         </ul> 
+        </Drawer>
     )
 };
 
