@@ -2,10 +2,10 @@ import Avatar from "../atoms/Avatar";
 import NameHandler from "../atoms/HandlerName";
 import VerifiedBadge from "../atoms/VerifiedBadge";
 
-function AvatarName({src, name, handler, verified}:AvatarNameProps) {
-    console.log(src )
+function AvatarName({src, name, handler, verified, className, onClick}:AvatarNameProps) {
+
     return (
-        <header className="flex space-x-3 mb-4">
+        <header onClick={onClick} className={`flex space-x-3 mb-4 ${className}`}>
             <Avatar src={src} />
 
             <div className="flex flex-col">
@@ -24,6 +24,8 @@ function AvatarName({src, name, handler, verified}:AvatarNameProps) {
 export default AvatarName;
 
 interface AvatarNameProps {
+    className?: string;
+    onClick: any;
     src?: string;
     name: string;
     handler: string;

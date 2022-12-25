@@ -1,43 +1,3 @@
-// export default [
-//     {
-//         "id": 1,
-//         "name": "Elon Musk",
-//         "screen_name": "Musk",
-//         "handler": "elonmusk",
-//         "verified": "person",
-//         "location": null,
-//         "url": null,
-//         "type": "person",
-//         "followers_count": 232,
-//         "friends_count": 2,
-//         "listed_count": 44,
-//         "favourites_count": 6,
-//         "statuses_count": 85,
-//         "created_at": "Mon Nov 29 21:18:15 +0000 2010",
-//         "profile_banner_url": "https://pbs.twimg.com/profile_banners/44196397/1576183471/1080x360",
-//         "profile_image_url": "https://pbs.twimg.com/profile_images/1590968738358079488/IY9Gx6Ok_400x400.jpg"
-//     },
-//     {
-//         "id": 2,
-//         "name": "Kim Dotcom",
-//         "screen_name": "Kim Dotcom",
-//         "handler": "KimDotcom",
-//         "verified": "person",
-//         "location": null,
-//         "url": null,
-//         "type": "person",
-//         "followers_count": 232,
-//         "friends_count": 2,
-//         "listed_count": 44,
-//         "favourites_count": 6,
-//         "statuses_count": 85,
-//         "created_at": "Mon Nov 29 21:18:15 +0000 2010",
-//         "profile_banner_url": "https://pbs.twimg.com/profile_banners/611986351/1412730708/1080x360",
-//         "profile_image_url": "https://pbs.twimg.com/profile_images/2320423543/9qheijpvtu9g5dteqvvw_400x400.jpeg"
-//     }
-// ]
-
-
 export default [
     {
         "id": 1,
@@ -152,7 +112,7 @@ export default [
         "name": "Tesla",
         "handler": "Tesla",
         "verified": true,
-        "type": "company",
+        "type": "business",
         "profile_avatar": "https://pbs.twimg.com/profile_images/1337607516008501250/6Ggc4S5n_400x400.png",
         "profile_banner": "https://pbs.twimg.com/profile_banners/13298072/1669832572/1500x500",
 
@@ -170,7 +130,7 @@ export default [
         "name": "SpaceX",
         "handler": "SpaceX",
         "verified": true,
-        "type": "company",
+        "type": "business",
         "profile_avatar": "https://pbs.twimg.com/profile_images/1082744382585856001/rH_k3PtQ_400x400.jpg",
         "profile_banner": "https://pbs.twimg.com/profile_banners/34743251/1596331248/1500x500",
 
@@ -243,6 +203,26 @@ export default [
         "following_count": "18",
         "followers_count": "350.5",
         "tweets": 404
+    },
+    {
+        "id": 12,
+        "name": "Twitter",
+        "handler": "Twitter",
+        "verified": true,
+        "type": "business",
+        "profile_avatar": "https://pbs.twimg.com/profile_images/1488548719062654976/u6qfBBkF_400x400.jpg",
+        "profile_banner": "https://pbs.twimg.com/profile_banners/783214/1646075315/1500x500",
+
+        "description": "What's happening?!",
+
+        "location": "everywhere",
+        "url": "about.twitter.com",
+        "born_at": "March 21",
+        "created_at": "February 2007",
+
+        "following_count": "5",
+        "followers_count": "65.1",
+        "tweets": "15000"
     },
 
 ]

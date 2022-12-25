@@ -17,7 +17,7 @@ function VerifiedBadge(props:VerifiedBadgeProps) {
     }
 
    return (
-        <span  style={{"height": "18.75px", "width": "18.75px"}}>
+        <span style={{"height": "18.75px", "width": "18.75px"}}>
             {badge}
         </span>
    )
