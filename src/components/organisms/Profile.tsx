@@ -9,7 +9,7 @@ function Profile(props:any) {
         location,
         description,
         url,
-        verified, 
+        type,
         created_at,
         profile_avatar,
         profile_banner,
@@ -38,19 +38,14 @@ function Profile(props:any) {
                         <button style={{ "fontSize": "15px", "height": "36px", "lineHeight": "1.5px"}} className="bg-[#eff3f4] font-bold rounded-full py-2.5 px-4">Follow</button>
                     </div>
                 </div>
-
                 
                 <div className="mt-3">    
-                <AvatarName name={name} handler={handler} verified={verified} />
+                    <AvatarName name={name} handler={handler} verified={type} shape={type === "business" ? "rect" : "rounded"}/>
                 </div>
 
                 <div className="text-gray-300">
-                    <p className="text-skin-base" style={{ "fontSize": "15px"}}>
-                        {description}
-                        {/* Pro-civilization : Time, "Hero of the Environment" : Bestselling author of "Apocalypse Never" & "San Fransicko" : Green Book Award : MD = my initials. Not a doc */}
-                    </p>
+                    <p className="text-skin-base" style={{ "fontSize": "15px"}}>{description}</p>
                 </div>
-
 
                 <div className="flex flex-row text-gray-300 my-2 space-x-3">
                     <div className="flex items-center">
