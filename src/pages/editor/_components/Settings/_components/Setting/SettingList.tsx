@@ -9,6 +9,7 @@ function Widget({children}:any) {
 }
 
 function SettingList() {
+    // @ts-ignore
     const { twitterTheme, setTwitterThemeTo, twitterPrimaryColor, SetTwitterPrimaryColorTo } = useTweetTabs();
 
     return (
@@ -45,7 +46,7 @@ function SettingList() {
         </div> */}
             <Widget>
                 <h3 className="text-gray-200 mb-2 font-semibold">Color</h3>
-                <div className="flex flex-wrap space-x-2 text-sm p-2 bg-gray-800 rounded-xl">
+                <div className="flex flex-wrap justify-between gap-y-2 text-sm p-2 bg-gray-800 rounded-xl">
                     <button onClick={() => SetTwitterPrimaryColorTo("1")} className="h-10 w-10 rounded-xl theme-twitter-primary-1 bg-skin-accent">
                         <div className={`${twitterPrimaryColor === "1" ? "block" : "hidden"} fill-white h-6 w-6 m-auto`}>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>

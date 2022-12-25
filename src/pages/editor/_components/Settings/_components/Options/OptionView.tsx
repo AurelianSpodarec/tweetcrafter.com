@@ -1,5 +1,5 @@
-import Profile from "../../../../../../components/templates/Profile";
-import Tweet from "../../../../../../components/templates/Tweet";
+import Profile from "../../../../../../components/organisms/Profile";
+import Tweet from "../../../../../../components/organisms/Tweet";
 import { useTweetTabs } from "../../../../../../context/TweetTabsInfo";
 
 const options = [
@@ -43,28 +43,30 @@ const options = [
     }
 ]
 
-function Option(props: any) {
-    const option = props.data;
-    const { activeTab, setActiveTab } = useTweetTabs();
-
-    if(option.coming_soon === true) 
-    return (
-        <div>
-            <div className="p-4 text-center">
-            <img className="rounded-xl" src={option.thumbnail} />
-            <h3 className="text-gray-300">{option.name} <br/>(Coming Soon)</h3>
-        </div>
-        </div>
-    )
-    return (
-        <div className="p-4 text-center" onClick={() => setActiveTab(option.id)}>
-            <img className="rounded-xl" src={option.thumbnail} />
-            <h3 className="text-gray-300">{option.name}</h3>
-        </div>
-    )
-}
 
 function OptionView() {
+
+    function Option(props: any) {
+        const option = props.data;
+        const { activeTab, setActiveTab } = useTweetTabs();
+    
+        if(option.coming_soon === true) 
+        return (
+            <div>
+                <div className="p-4 text-center">
+                <img className="rounded-xl" src={option.thumbnail} />
+                <h3 className="text-gray-300">{option.name} <br/>(Coming Soon)</h3>
+            </div>
+            </div>
+        )
+        return (
+            <div className="p-4 text-center" onClick={() => setActiveTab(option.id)}>
+                <img className="rounded-xl" src={option.thumbnail} />
+                <h3 className="text-gray-300">{option.name}</h3>
+            </div>
+        )
+    }
+
     return (
         <>
             {options.map((option) => {

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image' 
-import Tweet from '../components/templates/Tweet';
+import Tweet from '../components/organisms/Tweet';
 import profiles from './../json/profiles';
 
 

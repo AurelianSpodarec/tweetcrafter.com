@@ -1,9 +1,9 @@
-import AccountSuspended from "../../../../components/templates/AccountSuspended";
-import Pool from "../../../../components/templates/Pool";
-import Profile from "../../../../components/templates/Profile";
-import RelevantPeople from "../../../../components/templates/RelevantPeople";
-import Reply from "../../../../components/templates/Reply";
-import Tweet from "../../../../components/templates/Tweet";
+import AccountSuspended from "../../../../components/organisms/AccountSuspended";
+import Pool from "../../../../components/organisms/Pool";
+import Profile from "../../../../components/organisms/Profile";
+import RelevantPeople from "../../../../components/organisms/RelevantPeople";
+import Reply from "../../../../components/organisms/Reply";
+import Tweet from "../../../../components/organisms/Tweet";
 import { useTweetTabs } from "../../../../context/TweetTabsInfo";
 import profiles from "../../../../json/profiles";
 

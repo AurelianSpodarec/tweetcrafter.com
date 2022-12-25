@@ -36,3 +36,26 @@ export default [
         "profile_image_url": "https://pbs.twimg.com/profile_images/2320423543/9qheijpvtu9g5dteqvvw_400x400.jpeg"
     }
 ]
+
+
+// export default [
+//     {
+//         "id": 2,
+//         "name": "Kim Dotcom",
+//         "handler": "KimDotcom",
+//         "verified": true,
+//         "type": "person",
+//         "profile_avatar": "https://twitter.com/KimDotcom/photo",
+//         "profile_banner": "https://pbs.twimg.com/profile_banners/611986351/1412730708/1500x500",
+
+//         "description": "Entrepreneur, Innovator, Gamer, Artist, Internet Freedom Fighter & Father of 6",
+
+//         "location": "Contact: twitter@kim.com"
+//         "url": "kim.com",
+//         "created_at": "June 2012",
+
+
+//         "following_count": "18.8",
+//         "followers_count": "1.2",
+//     }
+// ]
