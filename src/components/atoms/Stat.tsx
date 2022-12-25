@@ -1,7 +1,7 @@
 function Stat(props:StatProps) {
     return (
         <p className="text-sm">
-            <span className="text-skin-base font-bold">{props.amount}</span>
+            <span className="text-skin-base font-bold pr-1">{props.amount}</span>
             <span className="text-skin-muted">{props.name}</span>
         </p>
     )
