@@ -6,22 +6,21 @@ function Profile(props:any) {
     const { data: { 
         name, 
         handler, 
-        verified,
-        screen_name, 
-        profile_image_url,
-        profile_banner_url
+        verified, 
+        profile_avatar,
+        profile_banner
    } } = props;
 
     return (
         <article className="bg-skin-base max-w-[598px]">
             <div>
-                <img src={profile_banner_url} />
+                <img src={profile_banner} />
             </div>
             <section className="pt-3 px-4 pb-0 mb-4">
                 
                 <div className="flex justify-between">
                     <div style={{ "marginTop": "-15%" }}>
-                        <Avatar src={profile_image_url} size="lg"  />
+                        <Avatar src={profile_avatar} size="lg"  />
                     </div>
                     <div className="space-x-2 flex flex-wrap align-center">
                         <button className="p-1 rounded-full" style={{"border": "1px solid", "borderColor": "rgb(83, 100, 113)", "height": "36px", "width": "36px"}}>
