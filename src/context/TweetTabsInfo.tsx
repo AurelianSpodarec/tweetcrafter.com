@@ -6,13 +6,19 @@ const TweetTabsContext = createContext({
     setActiveTab: (id: string) => {},
 });
 
+// Rename this to Twitter Settings
 function TweetTabsProvider({ children }: any) {
     const [activeTab, setActiveTab] = useState('profile');
     const [mainProfile, setMainProfile] = useState(profiles[1])
     const [twitterTheme, setTwitterTheme] = useState('lights-out')
     const [twitterPrimaryColor, setTwitterPrimaryColor] = useState('1');
+    const [selectedFont, setSelectedFont] = useState('twitterChirp');
 
     // loaded profile, one that you can edit, change etc...
+
+    function setSelectedFontTo(font: "twitterChirp" | "System") {
+        setSelectedFont(font)
+    }
 
     function setMainProfileTo(id:number) {
         // if(profiles.length !== id) return
@@ -36,7 +42,9 @@ function TweetTabsProvider({ children }: any) {
         twitterTheme,
         setTwitterThemeTo,
         twitterPrimaryColor,
-        SetTwitterPrimaryColorTo
+        SetTwitterPrimaryColorTo,
+        selectedFont,
+        setSelectedFontTo
     };
 
     return <TweetTabsContext.Provider value={value}>{children}</TweetTabsContext.Provider>;

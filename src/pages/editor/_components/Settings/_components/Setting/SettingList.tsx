@@ -10,7 +10,7 @@ function Widget({children}:any) {
 
 function SettingList() {
     // @ts-ignore
-    const { twitterTheme, setTwitterThemeTo, twitterPrimaryColor, SetTwitterPrimaryColorTo } = useTweetTabs();
+    const { twitterTheme, setTwitterThemeTo, twitterPrimaryColor, SetTwitterPrimaryColorTo, selectedFont, setSelectedFontTo } = useTweetTabs();
 
     function ColorSelect({id}:any) {
         return (
@@ -48,7 +48,7 @@ function SettingList() {
 
             <Widget>
                 <h3 className="text-gray-200 mb-2 font-semibold">Theme</h3>
-                <div className="flex space-x-2 text-sm bg-[#1e2732] p-3 rounded-xl">
+                <div className="flex justify-around space-x-2 text-sm bg-[#1e2732] p-3 rounded-xl">
                     <button onClick={() => setTwitterThemeTo('default')}  className={`${twitterTheme === 'default' ? "outline outline-blue-600" : ""} rounded-xl bg-[#314152] text-sm font-bold text-white px-3 py-2`} style={{ "borderColor":"border-color: rgb(51, 54, 57)"}}>Default</button>
                     <button onClick={() => setTwitterThemeTo('dim')} className={`${twitterTheme === 'dim' ? "outline outline-blue-600" : ""} rounded-xl bg-[#314152] text-sm font-bold text-white px-3 py-2`} style={{ "borderColor":"border-color: rgb(51, 54, 57)"}}>Dim</button>
                     <button onClick={() => setTwitterThemeTo('lights-out')} className={`${twitterTheme === 'lights-out' ? "outline outline-blue-600" : ""} rounded-xl bg-[#314152] text-sm font-bold text-white px-3 py-2`} style={{ "borderColor":"border-color: rgb(51, 54, 57)"}}>Lights Out</button>
@@ -58,15 +58,26 @@ function SettingList() {
             <Widget>
             <div className="text-gray-300">
             <h3 className="text-gray-200 mb-2 font-semibold">Font Style</h3>
-                <div>
-                    <div>Twitter Chirp Font</div>
-                    <div>System Font</div>
-                    <div>Inter</div>
+                <div className="flex flex-col">
+                    <button type="button" onClick={() => setSelectedFontTo('twitterChirp')} className="fontFamily-twitterChirp">
+                    <div className="flex justify-between">
+                        <span>Twitter Chirp Font</span>
+                        <span>{selectedFont === "twitterChirp" ? "yes": "no"}</span>
+                    </div>
+                    </button>
+
+                    <button type="button" onClick={() => setSelectedFontTo('system')}>
+                    <div className="flex justify-between">
+                        <span>System</span>
+                        <span>{selectedFont === "system" ? "yes": "no"}</span>
+                    </div>
+                    </button>
+                    {/* <div>Inter</div> */}
                 </div>
             </div>
             </Widget>
 
-            
+
  
 {/* 
             <Widget>
