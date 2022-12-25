@@ -25,7 +25,7 @@ export default function Editor() {
 
             <main className="flex flex-row h-full overflow-hidden relative bg-gradient-to-r from-blue-500 to-pink-500 ">
                 <div className="relative ">
-                <aside className="flex flex-col relative overflow-hidden h-full w-[295px] bg-[#000]">
+                <aside className="flex flex-col relative overflow-hidden h-full w-[306px] bg-[#000]">
                     <div className="overflow-y-auto h-full">
                         <SettingView />
                     </div>
