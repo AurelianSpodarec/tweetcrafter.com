@@ -5,15 +5,24 @@ function Reply({data}:any) {
     if(!data) return <></>
     console.log("hiiiii", data.name)
     return (
-        <article className="bg-skin-base max-w-[598px]">
+        <article className="relative  bg-skin-base max-w-[598px]">
         <div className="p-4 flex flex-row align-stretch flex-auto">
+
             <div className="flex-none mr-3">
+                {/* <div className="m-auto w-0.5 mt-1 h-full bg-[#333639]"></div> */}
                 <Avatar src={data.profile_avatar} />
                 <div className="m-auto w-0.5 mt-1 h-full bg-[#333639]"></div>
             </div>
 
             <div>
-                <AvatarName name={data.name} handler={data.handler} verified={data.type} option="reply" />
+
+                <div className="flex flex-row justify-between items-center">
+                    <AvatarName name={data.name} handler={data.handler} verified={data.type} option="reply" />
+                    <div style={{ "height": "18.75px"}} className="w-auto">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" className="fill-[#71767b] h-full w-full"><g><path d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"></path></g></svg>
+                    </div>
+                </div>
+
                 <span className="text-skin-muted">Replying to <span className="text-skin-accent">@adamwathan</span></span>
                 <p className="text-skin-base">
                     We put just as much of our attention into the code on these templates as we did with the design.
@@ -29,7 +38,9 @@ function Reply({data}:any) {
                         <span>3</span>
                     </div>
                 </div>
+
             </div>
+
         </div>
         </article>
     )

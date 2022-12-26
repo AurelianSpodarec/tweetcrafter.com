@@ -5,7 +5,7 @@ import VerifiedBadge from "../atoms/VerifiedBadge";
 function AvatarName({src, name, handler, verified, className, onClick, shape, type, option}:AvatarNameProps) {
     console.log(type)
     return (
-        <header onClick={onClick} className={`flex space-x-3 ${option === "reply" ? "" : "mb-4"} ${className}`}>
+        <header onClick={onClick} className={`flex ${option === "reply" ? "" : "mb-4"} ${className}`}>
             <Avatar src={src} shape={type} type={type}/>
             
 
@@ -19,12 +19,14 @@ function AvatarName({src, name, handler, verified, className, onClick, shape, ty
                 </div>
             </div>
 
-            <div className="flex flex-row items-baseline">
-                <div className="text-skin-muted inline" style={{ "fontSize" : "15px", "lineHeight": "20px" }}>.</div>
+            {option === "reply" &&
+            <div className="flex flex-row items-center">
+                <div className="text-skin-muted inline h-full px-1" style={{ "fontSize" : "15px", "lineHeight": "20px" }}>.</div>
                 <div>
                     <span className="text-skin-muted">Dec 10</span>
                 </div>
             </div>
+            }
         </header>
     )
 }

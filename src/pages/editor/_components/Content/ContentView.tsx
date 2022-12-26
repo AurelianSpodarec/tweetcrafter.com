@@ -24,6 +24,7 @@ function ContentView() {
     const [profilesData, setProfilesData] = useState([]);
 
     function populateReplies() {
+        // @ts-ignore
         setProfilesData([{...profiles[4]}, {...profiles[5]}, {...profiles[4]}]);
     }
 

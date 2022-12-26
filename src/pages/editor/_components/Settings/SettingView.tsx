@@ -23,7 +23,7 @@ const tabs = [
 ];
 
 function SettingView() {
-    const [activeTab, setActiveTab] = useState('settings');
+    const [activeTab, setActiveTab] = useState('type');
 
     function renderTabs() {
         return (
