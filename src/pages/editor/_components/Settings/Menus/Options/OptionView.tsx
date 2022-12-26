@@ -1,4 +1,5 @@
 import Profile from "../../../../../../components/organisms/Profile";
+import Reply from "../../../../../../components/organisms/Reply";
 import Tweet from "../../../../../../components/organisms/Tweet";
 import { useTwitterEditor } from "../../../../../../context/TwitterEditorInfo";
 import profiles from "../../../../../../json/profiles";
@@ -20,29 +21,31 @@ const options = [
         "component": <Tweet data={profiles[2]} />
     },
     {
-        "id": 'account_suspended',
-        "name": "Account Suspended",
-        "thumbnail": "https://i.imgur.com/UWmMBMa.png",
-        "coming_soon": false,
-    },
-    {
         "id": "reply",
         "name": "Reply",
         "thumbnail": "https://i.imgur.com/UWmMBMa.png",
         "coming_soon": false,
+        "component": <Reply data={profiles[2]} />
     },
-    // { this should be part of TWEET Options - include pool? same with image and quote
-    //     "id": "pool",
-    //     "name": "Pool",
-    //     "thumbnail": "https://i.imgur.com/HbklUeF.png",
-    //     "coming_soon": false,
-    // },
     {
         "id": "relevant_people",
         "name": "Relevant People",
         "thumbnail": "https://i.imgur.com/HbklUeF.png",
         "coming_soon": false,
     }
+    // { this should be part of TWEET Options - include pool? same with image and quote
+    //     "id": "pool",
+    //     "name": "Pool",
+    //     "thumbnail": "https://i.imgur.com/HbklUeF.png",
+    //     "coming_soon": false,
+    // },
+    // { - should be option to toggle on profile
+    //     "id": 'account_suspended',
+    //     "name": "Account Suspended",
+    //     "thumbnail": "https://i.imgur.com/UWmMBMa.png",
+    //     "coming_soon": false,
+    // },
+  
 ]
 
 
