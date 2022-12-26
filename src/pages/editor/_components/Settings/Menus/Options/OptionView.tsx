@@ -1,6 +1,6 @@
 import Profile from "../../../../../../components/organisms/Profile";
 import Tweet from "../../../../../../components/organisms/Tweet";
-import { useTweetTabs } from "../../../../../../context/TweetTabsInfo";
+import { useTwitterEditor } from "../../../../../../context/TwitterEditorInfo";
 import Drawer from "../../_components/Drawer";
 
 const options = [
@@ -30,12 +30,12 @@ const options = [
         "thumbnail": "https://i.imgur.com/UWmMBMa.png",
         "coming_soon": false,
     },
-    {
-        "id": "pool",
-        "name": "Pool",
-        "thumbnail": "https://i.imgur.com/HbklUeF.png",
-        "coming_soon": false,
-    },
+    // { this should be part of TWEET Options - include pool? same with image and quote
+    //     "id": "pool",
+    //     "name": "Pool",
+    //     "thumbnail": "https://i.imgur.com/HbklUeF.png",
+    //     "coming_soon": false,
+    // },
     {
         "id": "relevant_people",
         "name": "Relevant People",
@@ -49,7 +49,7 @@ function OptionView() {
 
     function OptionItem(props: any) {
         const option = props.data;
-        const { activeTab, setActiveTab } = useTweetTabs();
+        const { activeTab, setActiveTab } = useTwitterEditor();
     
         if(option.coming_soon === true) 
         return (

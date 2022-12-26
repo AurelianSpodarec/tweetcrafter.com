@@ -1,10 +1,10 @@
-import { useTweetTabs } from "../../../../../../context/TweetTabsInfo";
+import { useTwitterEditor } from "../../../../../../context/TwitterEditorInfo";
 import Drawer from "../../_components/Drawer";
 import Widget from "../../_components/Widget";
 
 function SettingList() {
     // @ts-ignore
-    const { twitterTheme, setTwitterThemeTo, twitterPrimaryColor, SetTwitterPrimaryColorTo, selectedFont, setSelectedFontTo } = useTweetTabs();
+    const { twitterTheme, setTwitterThemeTo, twitterPrimaryColor, SetTwitterPrimaryColorTo, selectedFont, setSelectedFontTo } = useTwitterEditor();
 
     function ColorSelect({id}:any) {
         return (

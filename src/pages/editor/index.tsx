@@ -8,7 +8,7 @@ import HeaderIndex from './_components/Header/HeaderIndex';
 export default function Editor() {
      // @ts-ignore
   
-    // const { activeTab, setActiveTab, mainProfile, twitterTheme } = useTweetTabs();
+    // const { activeTab, setActiveTab, mainProfile, twitterTheme } = useTwitterEditor();
     return (
         <>
         <Head>

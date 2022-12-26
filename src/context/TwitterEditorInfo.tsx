@@ -7,7 +7,7 @@ const TweetTabsContext = createContext({
 });
 
 // Rename this to Twitter Settings
-function TweetTabsProvider({ children }: any) {
+function TwitterEditorProvider({ children }: any) {
     const [activeTab, setActiveTab] = useState('profile');
     const [mainProfile, setMainProfile] = useState(profiles[1])
     const [twitterTheme, setTwitterTheme] = useState('lights-out')
@@ -51,16 +51,16 @@ function TweetTabsProvider({ children }: any) {
 }
 
 // Use as a hook
-function useTweetTabs() {
+function useTwitterEditor() {
     const context = useContext(TweetTabsContext)
 
     if (context === undefined) {
-        throw new Error('useTweetTabs must be used within a TweetTabsProvider')
+        throw new Error('useTwitterEditor must be used within a TwitterEditorProvider')
       }
       return context
 }
 
 export {
-    TweetTabsProvider,
-    useTweetTabs
+    TwitterEditorProvider,
+    useTwitterEditor
 }

@@ -4,12 +4,12 @@ import Profile from "../../../../components/organisms/Profile";
 import RelevantPeople from "../../../../components/organisms/RelevantPeople";
 import Reply from "../../../../components/organisms/Reply";
 import Tweet from "../../../../components/organisms/Tweet";
-import { useTweetTabs } from "../../../../context/TweetTabsInfo";
+import { useTwitterEditor } from "../../../../context/TwitterEditorInfo";
 import profiles from "../../../../json/profiles";
 
 function ContentView() {
     // @ts-ignore
-    const { activeTab, setActiveTab, mainProfile, selectedFont, twitterTheme, twitterPrimaryColor } = useTweetTabs();
+    const { activeTab, setActiveTab, mainProfile, selectedFont, twitterTheme, twitterPrimaryColor } = useTwitterEditor();
 
 
     return (
