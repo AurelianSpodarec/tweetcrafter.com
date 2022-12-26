@@ -26,7 +26,7 @@ function Profile(props:any) {
                 
                 <div className="flex justify-between">
                     <div style={{ "marginTop": "-15%" }}>
-                        <Avatar src={profile_avatar} size="lg"  />
+                        <Avatar src={profile_avatar} size="lg" type={type} />
                     </div>
                     <div className="space-x-2 flex flex-wrap align-center">
                         <button className="p-1 rounded-full" style={{"border": "1px solid", "borderColor": "rgb(83, 100, 113)", "height": "36px", "width": "36px"}}>
@@ -40,7 +40,7 @@ function Profile(props:any) {
                 </div>
                 
                 <div className="mt-3">    
-                    <AvatarName name={name} handler={handler} verified={type} shape={type === "business" ? "rect" : "rounded"}/>
+                    <AvatarName name={name} handler={handler} verified={type}/>
                 </div>
 
                 <div className="text-gray-300">

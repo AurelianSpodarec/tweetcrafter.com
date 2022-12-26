@@ -2,7 +2,8 @@ function Avatar({
     size = 'md', 
     shape, 
     src, 
-    alt
+    alt,
+    type
 }: AvatarProps) {
     const avatarSizes = {
         sm: 20,
@@ -16,7 +17,7 @@ function Avatar({
     return (
         <img 
             src={src}
-            className={`${shape === 'rect' ? 'rounded-md' : 'rounded-full'} h-12 w-12 relative`}
+            className={`${type === "business" ? "rounded-2xl" : "rounded-full"} h-12 w-12 relative`}
             style={{ height: `${avatarSize}px`, width: `${avatarSize}px`, "border": "4px solid black" }}
             alt={alt}
         />
@@ -30,5 +31,6 @@ interface AvatarProps {
     shape?: 'rounded' | 'rect';
     src?: string;
     alt?: string;
+    type?: string;
 }
 

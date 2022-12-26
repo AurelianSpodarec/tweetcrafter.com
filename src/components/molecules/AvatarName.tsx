@@ -2,11 +2,11 @@ import Avatar from "../atoms/Avatar";
 import NameHandler from "../atoms/HandlerName";
 import VerifiedBadge from "../atoms/VerifiedBadge";
 
-function AvatarName({src, name, handler, verified, className, onClick, shape}:AvatarNameProps) {
-
+function AvatarName({src, name, handler, verified, className, onClick, shape, type}:AvatarNameProps) {
+    console.log(type)
     return (
         <header onClick={onClick} className={`flex space-x-3 mb-4 ${className}`}>
-            <Avatar src={src} shape={shape} />
+            <Avatar src={src} shape={type} type={type}/>
 
             <div className="flex flex-col">
                 <div className="flex flex-col">
@@ -31,4 +31,5 @@ interface AvatarNameProps {
     handler: string;
     verified?: "person" | "business" | "gov";
     shape?: "rounded" | "rect";
+    type?: any;
 }
