@@ -11,7 +11,7 @@ import profiles from "../../../../json/profiles";
 function ReplyChain({ data }: any) {
     return (
         data.map((item:any, index:number) => {
-            return <Reply data={item} index={index} />
+            return <Reply data={item} key={index} />
         })
     )
 }
