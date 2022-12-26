@@ -33,7 +33,8 @@ export default function Editor() {
                 </div>
  
                 <section className="relative overflow-y-auto h-full w-full">
-                <div className="pr-[413px] pb-[26px] relative flex overflow-y-auto h-full w-full items-center justify-center">
+                <div className="pb-[26px] relative flex overflow-y-auto h-full w-full items-center justify-center">
+                            {/* pr-[413px]  */}
                     <ContentView />
                 </div> 
                 </section>
