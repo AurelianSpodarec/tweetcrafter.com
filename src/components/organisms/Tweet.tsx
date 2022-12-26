@@ -15,7 +15,7 @@ function Tweet(props:TweetProps) {
     } } = props;
 
     return (
-        <article className="max-w-[598px] bg-skin-base p-4">
+        <article className="max-w-[598px] w-[598px] bg-skin-base p-4">
             <AvatarName name={name} handler={handler} src={profile_image_url} verified="person" />
 
             <section>

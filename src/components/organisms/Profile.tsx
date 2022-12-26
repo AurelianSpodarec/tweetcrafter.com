@@ -18,7 +18,7 @@ function Profile(props:any) {
    } } = props;
 
     return (
-        <article className="bg-skin-base max-w-[598px]">
+        <article className="bg-skin-base w-[598px] max-w-[598px]">
             <div>
                 <img src={profile_banner} />
             </div>

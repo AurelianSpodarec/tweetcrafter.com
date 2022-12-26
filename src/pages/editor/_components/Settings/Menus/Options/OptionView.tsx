@@ -1,6 +1,7 @@
 import Profile from "../../../../../../components/organisms/Profile";
 import Tweet from "../../../../../../components/organisms/Tweet";
 import { useTwitterEditor } from "../../../../../../context/TwitterEditorInfo";
+import profiles from "../../../../../../json/profiles";
 import Drawer from "../../_components/Drawer";
 
 const options = [
@@ -9,20 +10,20 @@ const options = [
         "name": "Profile",
         "thumbnail": "https://i.imgur.com/naK8pBm.png",
         "coming_soon": false,
-        // "component": <Profile />
-    },
-    {
-        "id": 'account_suspended',
-        "name": "Account Suspended",
-        "thumbnail": "https://i.imgur.com/UWmMBMa.png",
-        "coming_soon": false,
+        "component": <Profile data={profiles[2]} />
     },
     {
         "id": "tweet",
         "name": "Tweet",
         "thumbnail": "https://i.imgur.com/UWmMBMa.png",
         "coming_soon": false,
-        // "component": <Tweet  />
+        "component": <Tweet data={profiles[2]} />
+    },
+    {
+        "id": 'account_suspended',
+        "name": "Account Suspended",
+        "thumbnail": "https://i.imgur.com/UWmMBMa.png",
+        "coming_soon": false,
     },
     {
         "id": "reply",
@@ -56,14 +57,20 @@ function OptionView() {
             <div>
                 <div className="p-4 text-center">
                 <img className="rounded-xl" src={option.thumbnail} />
+               
                 <h3 className="text-gray-300">{option.name} <br/>(Coming Soon)</h3>
             </div>
             </div>
         )
         return (
-            <div className="p-4 text-center" onClick={() => setActiveTab(option.id)}>
-                <img className="rounded-xl" src={option.thumbnail} />
-                <h3 className="text-gray-300">{option.name}</h3>
+            <div className="cursor-pointer p-4" onClick={() => setActiveTab(option.id)}>
+                {/* <img className="rounded-xl" src={option.thumbnail} /> */}
+                <div className="relative">
+                    <div className="absolute top-0 right-0 bottom-0 left-0 z-10"></div>
+                    <div className="theme-twitter-lights-out -m-4" style={{"zoom": "0.465"}}>{option.component}</div>
+                    {/* "transform": "scale(45%) translate(-50%, -50%)" */}
+                </div>
+                <h3 className="text-center pt-4 text-gray-300">{option.name}</h3>
             </div>
         )
     }

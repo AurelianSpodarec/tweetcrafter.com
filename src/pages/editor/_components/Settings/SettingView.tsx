@@ -52,7 +52,7 @@ function SettingView() {
 
             {renderTabs()}
            
-            <div className="overflow-y-auto bg-[#314152] h-full w-full sidebar-scrollbar">
+            <div className="overflow-y-auto overflow-x-hidden bg-[#314152] h-full w-full sidebar-scrollbar">
             {(() => {
                 switch (activeTab) {
                 case 'profiles':
