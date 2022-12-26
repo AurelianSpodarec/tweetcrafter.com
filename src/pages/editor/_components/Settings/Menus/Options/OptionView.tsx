@@ -1,3 +1,4 @@
+import Complementary from "../../../../../../components/organisms/Complementary";
 import Profile from "../../../../../../components/organisms/Profile";
 import Reply from "../../../../../../components/organisms/Reply";
 import Tweet from "../../../../../../components/organisms/Tweet";
@@ -28,10 +29,11 @@ const options = [
         "component": <Reply data={profiles[2]} />
     },
     {
-        "id": "relevant_people",
-        "name": "Relevant People",
+        "id": "complementary",
+        "name": "complementary",
         "thumbnail": "https://i.imgur.com/HbklUeF.png",
         "coming_soon": false,
+        "component": <Complementary data={profiles[2]} />
     }
     // { this should be part of TWEET Options - include pool? same with image and quote
     //     "id": "pool",

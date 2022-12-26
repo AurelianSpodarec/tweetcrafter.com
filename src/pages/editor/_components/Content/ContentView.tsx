@@ -2,7 +2,7 @@ import { useState } from "react";
 import AccountSuspended from "../../../../components/organisms/AccountSuspended";
 import Pool from "../../../../components/organisms/Pool";
 import Profile from "../../../../components/organisms/Profile";
-import RelevantPeople from "../../../../components/organisms/RelevantPeople";
+import Complementary from "../../../../components/organisms/Complementary";
 import Reply from "../../../../components/organisms/Reply";
 import Tweet from "../../../../components/organisms/Tweet";
 import { useTwitterEditor } from "../../../../context/TwitterEditorInfo";
@@ -48,7 +48,7 @@ function ContentView() {
                     </>
                 }
                 {activeTab === 'pool' && <Pool />}
-                {activeTab === 'relevant_people' && <RelevantPeople />}
+                {activeTab === 'complementary' && <Complementary data={mainProfile} />}
             </div>
         </div>
     )
