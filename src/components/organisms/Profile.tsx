@@ -2,31 +2,61 @@ import Avatar from "../atoms/Avatar"
 import Stat from "../atoms/Stat"
 import AvatarName from "../molecules/AvatarName"
 
-function Profile(props:any) {
-    const { data: { 
-        name, 
-        handler, 
-        location,
-        description,
-        url,
-        type,
-        created_at,
-        profile_avatar,
-        profile_banner,
-        following_count,
-        followers_count
-   } } = props;
+import React, { useCallback, useEffect, useRef } from 'react';
+import { toPng } from 'html-to-image';
 
-    return (
-        <article className="bg-skin-base w-[598px] max-w-[598px]">
+function Profile(props:any) {
+  const {
+    data: {
+      name,
+      handler,
+      location,
+      description,
+      url,
+      type,
+      created_at,
+      profile_avatar,
+      profile_banner,
+      following_count,
+      followers_count,
+    },
+  } = props;
+
+
+//   useEffect() 
+  
+  const ref = useRef(null);
+
+    const onButtonClick = useCallback(() => {
+        if (ref.current === null) return
+
+            toPng(ref.current, { cacheBust: true, })
+            .then((dataUrl) => {
+                const link = document.createElement('a')
+                link.download = 'my-image-name.png'
+                link.href = dataUrl
+                link.click()
+                console.log("url", dataUrl)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+            
+    }, [ref])
+
+console.log("reff", ref.current)
+
+  return (
+    <>
+      <article id="ref" ref={ref} className="bg-skin-base w-[598px] max-w-[598px]">
             <div>
-                <img src={profile_banner} />
+                <img src="/images/bannerKIM.jfif" />
             </div>
             <section className="pt-3 px-4 pb-0 mb-4">
                 
                 <div className="flex justify-between">
                     <div style={{ "marginTop": "-15%" }}>
-                        <Avatar src={profile_avatar} size="lg" type={type} />
+                        {/* <Avatar src={profile_avatar} size="lg" type={type} /> */}
                     </div>
                     <div className="space-x-2 flex flex-wrap align-center">
                         <button className="p-1 rounded-full" style={{"border": "1px solid", "borderColor": "rgb(83, 100, 113)", "height": "36px", "width": "36px"}}>
@@ -70,6 +100,8 @@ function Profile(props:any) {
                 <p className="text-skin-muted mt-3" style={{"fontSize": "13px"}}>Not followed by anyone you{'’'}re following</p>
             </section>
         </article>
+        <button onClick={onButtonClick}>Click me</button>
+        </>
     )
 }
 
