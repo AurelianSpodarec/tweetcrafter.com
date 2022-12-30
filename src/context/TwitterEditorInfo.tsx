@@ -6,6 +6,7 @@ const TweetTabsContext = createContext({
     setActiveTab: (id: string) => {},
 });
  
+// @ts-ignore
 const refHTML = createRef(null);
 // Rename this to Twitter Settings
 function TwitterEditorProvider({ children }: any) {

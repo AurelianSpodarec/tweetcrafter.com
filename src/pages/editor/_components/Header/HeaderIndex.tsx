@@ -3,6 +3,7 @@ import { toPng } from 'html-to-image';
 import { useTwitterEditor } from '../../../../context/TwitterEditorInfo';
 
 function HeaderIndex() {
+    // @ts-ignore
     const { refHTML } = useTwitterEditor()
 
     const onButtonClick = useCallback(() => {
