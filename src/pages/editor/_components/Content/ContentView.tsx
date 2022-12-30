@@ -19,7 +19,7 @@ function ReplyChain({ data }: any) {
 
 function ContentView() {
     // @ts-ignore
-    const { activeTab, setActiveTab, mainProfile, selectedFont, twitterTheme, twitterPrimaryColor } = useTwitterEditor();
+    const { refHTML, activeTab, setActiveTab, mainProfile, selectedFont, twitterTheme, twitterPrimaryColor } = useTwitterEditor();
 
     const [profilesData, setProfilesData] = useState([]);
 
@@ -30,7 +30,7 @@ function ContentView() {
 
     return (
         <div className="flex flex-col rounded-xl overflow-hidden font-family-chirp">
-            <div className={`fontFamily-${selectedFont} theme-twitter-primary-${twitterPrimaryColor} theme-twitter-${twitterTheme} space-y-8 flex`}>
+            <div ref={refHTML} className={`fontFamily-${selectedFont} theme-twitter-primary-${twitterPrimaryColor} theme-twitter-${twitterTheme}`}>
                 {activeTab === 'profile' && <Profile data={mainProfile} />}
                 {activeTab === 'account_suspended' && <AccountSuspended />}
                 {activeTab === 'tweet' && <Tweet data={mainProfile} />}

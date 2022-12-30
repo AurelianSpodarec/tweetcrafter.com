@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+
 import Head from 'next/head'
  
 import ContentView from './_components/Content/ContentView';
 import SettingView from './_components/Settings/SettingView';
 import HeaderIndex from './_components/Header/HeaderIndex';
+
+
 
 export default function Editor() {
 

@@ -1,11 +1,12 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, createRef, useContext, useState } from 'react';
 import profiles from '../json/profiles';
 
 const TweetTabsContext = createContext({
     activeTab: '',
     setActiveTab: (id: string) => {},
 });
-
+ 
+const refHTML = createRef(null);
 // Rename this to Twitter Settings
 function TwitterEditorProvider({ children }: any) {
     const [activeTab, setActiveTab] = useState('profile');
@@ -44,7 +45,8 @@ function TwitterEditorProvider({ children }: any) {
         twitterPrimaryColor,
         SetTwitterPrimaryColorTo,
         selectedFont,
-        setSelectedFontTo
+        setSelectedFontTo,
+        refHTML
     };
 
     return <TweetTabsContext.Provider value={value}>{children}</TweetTabsContext.Provider>;
