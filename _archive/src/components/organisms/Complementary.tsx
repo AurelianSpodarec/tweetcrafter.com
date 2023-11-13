@@ -1,4 +1,4 @@
-import AvatarName from "../molecules/AvatarName";
+import AvatarName from "@/views/components/molecules//AvatarName";
 
 function Complementary({data}:any) {
     if(!data) return <></>

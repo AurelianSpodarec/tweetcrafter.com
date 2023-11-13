@@ -1,4 +1,4 @@
-import { useTwitterEditor } from "../../../../../../context/TwitterEditorInfo";
+import { useTwitterEditor } from "context/TwitterEditorInfo";
 import Drawer from "../../_components/Drawer";
 import Widget from "../../_components/Widget";
 

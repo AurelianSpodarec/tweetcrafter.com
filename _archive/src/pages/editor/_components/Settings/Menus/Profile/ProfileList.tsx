@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AvatarName from "../../../../../../components/molecules/AvatarName";
-import { useTwitterEditor } from "../../../../../../context/TwitterEditorInfo";
+import { useTwitterEditor } from "context/TwitterEditorInfo";
 import profiles from "../../../../../../json/profiles";
 import Drawer from "../../_components/Drawer";
 

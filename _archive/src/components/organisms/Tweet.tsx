@@ -1,7 +1,7 @@
 import Stat from "../atoms/Stat"
 import TweetImage from "../atoms/TweetImage";
 import TweetTextarea from "../atoms/TweetTextarea"
-import AvatarName from "../molecules/AvatarName"
+import AvatarName from "@/views/components/molecules//AvatarName"
 
 function Tweet(props:TweetProps) {
     const { data: { 

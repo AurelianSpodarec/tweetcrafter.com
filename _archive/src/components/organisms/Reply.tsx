@@ -1,5 +1,5 @@
 import Avatar from "../atoms/Avatar";
-import AvatarName from "../molecules/AvatarName";
+import AvatarName from "@/views/components/molecules//AvatarName";
 
 function Reply({data}:any) {
     if(!data) return <></>

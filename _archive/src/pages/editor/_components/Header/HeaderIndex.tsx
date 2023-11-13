@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef } from 'react';
 import { toPng } from 'html-to-image';
-import { useTwitterEditor } from '../../../../context/TwitterEditorInfo';
+import { useTwitterEditor } from 'context/TwitterEditorInfo';
 
 function HeaderIndex() {
     // @ts-ignore

@@ -1,6 +1,6 @@
 import '../../styles/styles.scss'
 import type { AppProps } from 'next/app'
-import { TwitterEditorProvider } from '../context/TwitterEditorInfo'
+import { TwitterEditorProvider } from 'context/TwitterEditorInfo'
 import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script';
 

@@ -2,7 +2,7 @@ import Complementary from "../../../../../../components/organisms/Complementary"
 import Profile from "../../../../../../components/organisms/Profile";
 import Reply from "../../../../../../components/organisms/Reply";
 import Tweet from "../../../../../../components/organisms/Tweet";
-import { useTwitterEditor } from "../../../../../../context/TwitterEditorInfo";
+import { useTwitterEditor } from "context/TwitterEditorInfo";
 import profiles from "../../../../../../json/profiles";
 import Drawer from "../../_components/Drawer";
 

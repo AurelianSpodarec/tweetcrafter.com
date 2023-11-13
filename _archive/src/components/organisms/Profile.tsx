@@ -1,6 +1,6 @@
 import Avatar from "../atoms/Avatar"
 import Stat from "../atoms/Stat"
-import AvatarName from "../molecules/AvatarName"
+import AvatarName from "@/views/components/molecules//AvatarName"
 
 // import React, { useCallback, useEffect, useRef } from 'react';
 // import { toPng } from 'html-to-image';
