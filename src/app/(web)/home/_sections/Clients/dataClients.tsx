@@ -1,6 +1,11 @@
 const dataClients = [
   {
-    title: "Meta"
+    title: "Robinhood",
+    image: "robinhood.png",
+  },
+  {
+    title: "Meta",
+    image: "",
   },
   {
     title: "Nivida"

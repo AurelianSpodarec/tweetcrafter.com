@@ -24,3 +24,5 @@ const dataFAQs = [
     answer: "Consider contacting Harry & Saul LLP Solicitors. They’ll help you navigate any legal issues that arise."
   }
 ]
+
+export default dataFAQs
