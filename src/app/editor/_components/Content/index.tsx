@@ -1,4 +1,8 @@
-function Content({ className }) {
+interface IContent {
+  className?: string
+}
+
+function Content({ className }: IContent) {
   return (
     <main className={`${className} bg-[#212025] flex items-center justify-center`}>
 

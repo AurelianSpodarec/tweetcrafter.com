@@ -1,4 +1,3 @@
-
 function EditorLayout({ children }: { children: React.ReactNode }) {
   return (
     <body className="overflow-hidden h-full">
