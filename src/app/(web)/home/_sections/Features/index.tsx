@@ -18,6 +18,8 @@ function SectionFeatures() {
           })}
         </div>
 
+          Editable tweet with different personas on the left
+
       </Container>
     </Section>
   )
