@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import menuSlice from "./features/menu/menuSlice";
+import navigationSlice from "./features/navigation/navigationSlice";
 
 const store = configureStore({
   reducer: {
-    menu: menuSlice
+    navigation: navigationSlice
   },
 });
 

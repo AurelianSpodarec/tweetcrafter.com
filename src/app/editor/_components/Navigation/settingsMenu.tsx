@@ -1,7 +1,19 @@
-const settingsMenu = {
+import { JSX } from "react";
+import { INavigationMenuKeys } from "@/store/features/navigation/INavigation"
+
+interface ISettingsMenu {
+  menu: {
+    id: INavigationMenuKeys
+    name: string
+    new: boolean
+    icon: JSX.Element
+  }[];
+}
+
+const settingsMenu: ISettingsMenu = {
   menu: [
     {
-      id: "type",
+      id: "xtypes",
       name: "Type",
       new: false,
       icon: <svg
@@ -20,7 +32,7 @@ const settingsMenu = {
       </svg>
     },
     {
-      id: "users",
+      id: "xusers",
       name: "Users",
       new: false,
       icon: <svg
@@ -41,7 +53,7 @@ const settingsMenu = {
       </svg>
     },
     {
-      id: "theme",
+      id: "xtheme",
       name: "X Theme",
       new: false,
       icon: <svg
@@ -57,7 +69,7 @@ const settingsMenu = {
       </svg>
     },
     {
-      id: "Decoration",
+      id: "decoration",
       name: "Decoration",
       new: false,
       icon: <svg
