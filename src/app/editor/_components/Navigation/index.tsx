@@ -16,9 +16,9 @@ function NavItem({ item }: { item: any }) {
   const isActive = getNavigationStateOf(item.id)
 
   return (
-    <button type="button" onClick={() => dispatch(menuOpen(item.id))} className="w-[55px] h-[55px] hover:bg-gray-200/20 cursor-default">
-      <div className="flex flex-col align-center justify-center items-center">
-        <div className="h-6 w-6">
+    <button type="button" onClick={() => dispatch(menuOpen(item.id))} className="w-[55px] h-[55px] cursor-default">
+      <div className="flex flex-col align-center justify-center items-center text-center">
+        <div className={`h-9 w-9 mx-auto mb-1 ${isActive ? "bg-gray-200/20" : ""} hover:bg-gray-200/20 p-2 rounded-lg`}>
           {item.icon}
         </div>
         <span className="text-[11px]">
@@ -32,11 +32,9 @@ function NavItem({ item }: { item: any }) {
 function Navigation() {
   return (
     <>
-      <aside className="bg-red-500 w-[55px] z-10">
-        <div className="flex flex-cols justify-between">
-          <div>
-            {settingsMenu.menu.map((item) => <NavItem item={item} key={item.id} />)}
-          </div>
+      <aside className="bg-[#07080a] w-[55px] z-10 py-4">
+        <div className="flex flex-col space-y-5">
+          {settingsMenu.menu.map((item) => <NavItem item={item} key={item.id} />)}
         </div>
       </aside>
 

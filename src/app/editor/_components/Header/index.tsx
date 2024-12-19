@@ -1,17 +1,17 @@
 function Header() {
   return (
-    <header className="bg-[#16151a] text-white py-4 px-4">
+    <header className="bg-[#07080a] text-white py-2 px-4">
       <div className="flex items-center justify-between">
 
         <div>
-          <h1>TweetCrafter</h1>
+          <h1 className="font-bold text-xl">TweetCrafter</h1>
         </div>
 
         <div className="space-x-4">
-          <button>
+          <button className="border border-[#ff792f]/30 text-gray-100 font-medium px-3.5 py-2 rounded-lg">
             Preview
           </button>
-          <button>
+          <button type="button" className="bg-[#251b17] text-[#ff792f] font-medium  px-3.5 py-2 rounded-lg">
             Download
           </button>
         </div>
