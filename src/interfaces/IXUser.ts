@@ -4,11 +4,22 @@ export interface IXUser {
   name: string;
   screen_name: string;
   location: string | null;
-  profile_location: null | string;
+  profile_location: {
+    id: string;
+    url: string;
+    place_type: string;
+    name: string;
+    full_name: string;
+    country_code: string;
+    country: string;
+    contained_within: any[]
+    bounding_box: null | any
+    attributes: Record<string, unknown>
+  } | null
   description: string | null;
-  url: string;
-  entities: {
-    url: {
+  url: null | string;
+  entities?: {
+    url?: {
       urls: {
         url: string;
         expanded_url: string;
@@ -16,11 +27,16 @@ export interface IXUser {
         indices: [number, number];
       }[];
     };
-    description: {
+    description?: {
       hashtags: string[];
       symbols: string[];
       user_mentions: string[];
-      urls: string[];
+      urls: {
+        url: string;
+        expanded_url: string;
+        display_url: string;
+        indices: [number, number];
+      }[];
     };
   };
   protected: boolean;
@@ -42,8 +58,8 @@ export interface IXUser {
   is_translator: boolean;
   is_translation_enabled: boolean;
   profile_background_color: string;
-  profile_background_image_url: string;
-  profile_background_image_url_https: string;
+  profile_background_image_url: string | null;
+  profile_background_image_url_https: string | null;
   profile_background_tile: boolean;
   profile_image_url: string;
   profile_image_url_https: string;

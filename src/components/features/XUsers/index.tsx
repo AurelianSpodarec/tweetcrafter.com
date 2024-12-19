@@ -2,8 +2,9 @@
 
 import { getNavigationStateOf } from "@/store/features/navigation/navigationSelectors";
 import dataXUsers from "./dataXUsers";
+import { IXUser } from "@/interfaces/IXUser";
 
-function ItemUser({ item }) {
+function ItemUser({ item }: { item: IXUser }) {
   return (
     <div className="flex overflow-hidden">
       <img src={item.profile_image_url} className="w-12 h-12 mr-2 rounded-lg" />
