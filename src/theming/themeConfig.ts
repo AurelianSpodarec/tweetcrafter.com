@@ -14,6 +14,17 @@ const themeConfig = {
         },
         secondary: {
           DEFAULT: 'var(--secondary)'
+        },
+
+        // Twitter
+        // ===================================================
+        twitter: {
+          primary: {
+            DEFAULT: 'var(--twitter-primary)'
+          },
+          card: {
+            DEFAULT: 'var(--twitter-card)'
+          }
         }
       },
       // border: {
