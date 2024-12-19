@@ -30,7 +30,7 @@ export const theming = plugin(
         '--secondary': theme('colors.purple.900')
       },
       // Twitter
-      // Twitter Primary
+      // ===============================================================
 
       // Twitter Theme
       [`.${TwitterThemeNames.Default}`]: {

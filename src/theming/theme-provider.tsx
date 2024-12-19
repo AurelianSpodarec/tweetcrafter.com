@@ -29,10 +29,10 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       themes={themeValues}
     >
       <div className={`${twitterTheme} ${twitterPrimaryTheme}`}>
-        <header className="fixed top-0 z-50 bg-gray-800 p-4">
-          <ModeToggle />
+        {/* <header className="fixed top-0 z-50 bg-gray-800 p-4"> */}
+          {/* <ModeToggle /> */}
 
-          <label className="block text-white mt-4">Twitter Theme</label>
+          {/* <label className="block text-white mt-4">Twitter Theme</label>
           <select
             onChange={handleTwitterThemeChange}
             value={twitterTheme}
@@ -43,9 +43,9 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
                 {theme}
               </option>
             ))}
-          </select>
+          </select> */}
 
-          <div>
+          {/* <div>
             <select
               onChange={handleTwitterPrimaryThemeChange}
               value={twitterPrimaryTheme}
@@ -57,22 +57,21 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
                 </option>
               ))}
             </select>
-          </div>
-        </header>
+          </div> */}
+        {/* </header> */}
 
-        <main className="pt-20">
           {children}
 
           {/* Example Section */}
-          <div className="p-4 fixed bottom-0 bg-green-500 ">
+          {/* <div className="p-4 fixed bottom-0 bg-green-500 ">
             <div className="text-twitter-primary bg-twitter-card font-bold p-4 rounded mb-4 shadow">
               Twitter Card: Styled with Twitter Theme
             </div>
             <div className="text-primary bg-secondary p-4 rounded shadow">
               Dashboard Card: Styled with Dashboard Theme
             </div>
-          </div>
-        </main>
+          </div> */}
+    
       </div>
     </NextThemesProvider>
   );
