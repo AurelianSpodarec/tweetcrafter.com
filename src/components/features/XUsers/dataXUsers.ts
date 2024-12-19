@@ -1,60 +1,12 @@
 import { IXUser } from "@/interfaces/IXUser";
 
-// https://x.com/BillGates
-// https://x.com/MrBeast
-// https://x.com/Minecraft
 // https://x.com/UnitedLuce
-// https://x.com/SpaceX
-// https://x.com/NASA
 // https://x.com/realDonaldTrump
-// https://x.com/TuckerCarlson
-// https://x.com/Tesla
 // https://x.com/Cristiano
 // https://x.com/JeffBezos
-// https://x.com/joerogan
-// https://x.com/YouTube
 // https://x.com/tim_cook
 
-// const dataXUsers: IXUser[] = [
-//   {
-//     id: 0,
-//     screenName: "Elon Musk",
-//     username: "elonmusk",
-//     description: "The people voted for major government reform",
-
-//     profileImageUrl: "https://pbs.twimg.com/profile_images/1858316737780781056/kPL61o0F_400x400.jpg",
-//     bannerImageUrl: "https://pbs.twimg.com/profile_banners/44196397/1726163678/1500x500",
-//     verified: true,
-//     tweetCount: 62.8,
-
-//     subscriptions: 180,
-//     followingCount: 873,
-//     followersCount: 207,
-
-//     createdAt: "June 2009",
-//   },
-//   {
-//     id: 0,
-//     screenName: "Donald J. Trump",
-//     username: "realDonaldTrump",
-//     description: "45th President of the United States of America🇺🇸",
-
-//     profileImageUrl: "https://pbs.twimg.com/profile_images/874276197357596672/kUuht00m_400x400.jpg",
-//     bannerImageUrl: "https://pbs.twimg.com/profile_banners/25073877/1604214583/1500x500",
-//   }
-// ];
-
-// export default dataXUsers
-
-
-
-
-
-
-
-
-
-const dataXUsers: IXUser[] = [
+const dataXUsers:IXUser[] = [
   {
     "id": 50393960,
     "id_str": "50393960",
