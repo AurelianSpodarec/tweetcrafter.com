@@ -6,7 +6,7 @@ function BadgeVerifyGold() {
   return (
     <svg
       aria-label="Verified account"
-      className="w-[18.75px] h-[18.75px] ml-.5"
+      className="w-[18.75px] h-[18.75px] ml-0.5"
       data-testid="icon-verified"
       viewBox="0 0 22 22"
     >
@@ -56,7 +56,7 @@ function BadgeVerifyGold() {
 
 function XPostDate() {
   return (
-    <span>Dec 18</span>
+    <span className="text-[15px] font-chirp font-thin text-[#71767b]">3h</span>
   )
 }
 
@@ -66,57 +66,84 @@ function XAvatar() {
   )
 }
 
+function EngagementItem({ children, count, className }: any) {
+  return (
+    <button type="button" className={`${className} cursor-pointer flex`}>
+      <div className="flex justify-start items-center text-[15px]">
+        <div className="w-[18.75px] h-[18.75px]">
+          {children}
+        </div>
+        {count &&
+          <span className="px-1">{count}</span>
+        }
+      </div>
+    </button>
+  )
+}
+
 function EngagementBar() {
   return (
-    <div className="flex justify-between">
-      <svg
-        aria-label="Comments"
-        className="w-[18.75px] h-[18.75px]"
-        viewBox="0 0 24 24"
-      >
-        <path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366a8.13 8.13 0 0 1 8.129 8.13c0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067A8.005 8.005 0 0 1 1.751 10m8.005-6a6.005 6.005 0 1 0 .133 12.01l.351-.01h1.761v2.3l5.087-2.81A6.127 6.127 0 0 0 14.122 4z"></path>
-      </svg>
+    <div className="flex justify-between flex-row gap-1 mt-3 max-w-[600px]">
 
-      <svg
-        aria-label="Repost"
-        className="w-[18.75px] h-[18.75px]"
-        viewBox="0 0 24 24"
-      >
-        <path d="m4.5 3.88 4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5a4 4 0 0 1-4-4V7.55L1.432 9.48.068 8.02zM16.5 6H11V4h5.5a4 4 0 0 1 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2"></path>
-      </svg>
+      <EngagementItem className="flex-[1]" count={34}>
+        <svg
+          aria-label="Comments"
+          viewBox="0 0 24 24"
+          className="h-full w-full"
+        >
+          <path d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366a8.13 8.13 0 0 1 8.129 8.13c0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.69h-.067A8.005 8.005 0 0 1 1.751 10m8.005-6a6.005 6.005 0 1 0 .133 12.01l.351-.01h1.761v2.3l5.087-2.81A6.127 6.127 0 0 0 14.122 4z"></path>
+        </svg>
+      </EngagementItem>
 
-      <svg
-        aria-label="Like"
-        className="w-[18.75px] h-[18.75px]"
-        viewBox="0 0 24 24"
-      >
-        <path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5a3.44 3.44 0 0 0-2.91 1.91c-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82a3.44 3.44 0 0 0-2.908-1.91m4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67a5.42 5.42 0 0 1 4.601-3.01c1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01a5.42 5.42 0 0 1 4.601 3.01c.896 1.81.846 4.17-.514 6.67"></path>
-      </svg>
+      <EngagementItem className="flex-[1]" count={6}>
+        <svg
+          aria-label="Repost"
+          viewBox="0 0 24 24"
+          className="h-full w-full"
+        >
+          <path d="m4.5 3.88 4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5a4 4 0 0 1-4-4V7.55L1.432 9.48.068 8.02zM16.5 6H11V4h5.5a4 4 0 0 1 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2"></path>
+        </svg>
+      </EngagementItem>
 
-      <svg
-        aria-label="Post Analytics"
-        className="w-[18.75px] h-[18.75px]"
-        viewBox="0 0 24 24"
-      >
-        <path d="M8.75 21V3h2v18zM18 21V8.5h2V21zM4 21l.004-10h2L6 21zm9.248 0v-7h2v7z"></path>
-      </svg>
+      <EngagementItem className="flex-[1]" count={84}>
+        <svg
+          aria-label="Like"
+          viewBox="0 0 24 24"
+          className="h-full w-full"
+        >
+          <path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5a3.44 3.44 0 0 0-2.91 1.91c-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82a3.44 3.44 0 0 0-2.908-1.91m4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67a5.42 5.42 0 0 1 4.601-3.01c1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01a5.42 5.42 0 0 1 4.601 3.01c.896 1.81.846 4.17-.514 6.67"></path>
+        </svg>
+      </EngagementItem>
 
+      <EngagementItem className="flex-[1]" count={501}>
+        <svg
+          aria-label="Post Analytics"
+          viewBox="0 0 24 24"
+          className="h-full w-full"
+        >
+          <path d="M8.75 21V3h2v18zM18 21V8.5h2V21zM4 21l.004-10h2L6 21zm9.248 0v-7h2v7z"></path>
+        </svg>
+      </EngagementItem>
 
+      <EngagementItem className="flex-shrink-0 ">
+        <svg
+          aria-label="Bookmark"
+          viewBox="0 0 24 24"
+          className="h-full w-full"
+        >
+          <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2h11A2.5 2.5 0 0 1 20 4.5v18.44l-8-5.71-8 5.71zM6.5 4c-.276 0-.5.22-.5.5v14.56l6-4.29 6 4.29V4.5c0-.28-.224-.5-.5-.5z"></path>
+        </svg>
+      </EngagementItem>
 
-      <svg
-        aria-label="Bookmark"
-        className="w-[18.75px] h-[18.75px]"
-        viewBox="0 0 24 24"
-      >
-        <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2h11A2.5 2.5 0 0 1 20 4.5v18.44l-8-5.71-8 5.71zM6.5 4c-.276 0-.5.22-.5.5v14.56l6-4.29 6 4.29V4.5c0-.28-.224-.5-.5-.5z"></path>
-      </svg>
-      <svg
-        aria-label="Share"
-        className="w-[18.75px] h-[18.75px]"
-        viewBox="0 0 24 24"
-      >
-        <path d="m12 2.59 5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15z"></path>
-      </svg>
+      <EngagementItem>
+        <svg
+          aria-label="Share"
+          viewBox="0 0 24 24"
+          className="h-full w-full"
+        >
+          <path d="m12 2.59 5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.3 3.3-1.41-1.42zM21 15l-.02 3.51c0 1.38-1.12 2.49-2.5 2.49H5.5C4.11 21 3 19.88 3 18.5V15h2v3.5c0 .28.22.5.5.5h12.98c.28 0 .5-.22.5-.5L19 15z"></path>
+        </svg>
+      </EngagementItem>
     </div>
   )
 }
@@ -125,64 +152,72 @@ function XUserLabel() {
   return (
     <div className="flex">
       <div className="flex items-center">
-        <span className="font-[15px]">SpaceX</span>
+        <span className="text-[15px] font-chirp font-bold text-[#e7e9ea]">SpaceX</span>
         <BadgeVerifyGold />
       </div>
-      <span>@SpaceX</span>
+      <span className="text-[15px] font-chirp font-thin text-[#71767b] ml-1">@SpaceX</span>
     </div>
   )
 }
 
 function XPost() {
   return (
-    <article className="flex">
-      <div className="mr-2">
-        <XAvatar />
-      </div>
-      <div>
+    <article className="flex bg-[#000000]">
+      <div className="flex flex-row">
 
-        <div className="flex items-center justify-between">
-          <div className="flex items-center align-center">
-            <XUserLabel />
-            <span>.</span>
-            <XPostDate />
+        <div className="flex items-center flex-basis-[40px] mr-2">
+          <XAvatar />
+        </div>
+        <div>
+
+          <div className="flex items-center justify-between">
+            <div className="flex items-center align-center">
+              <XUserLabel />
+              <div className="items-baseline">
+                <div className="text-[#71767b]">
+                  <span className="text-[#71767b] px-1 font-thin font-chirp text-[15px] line-height-20">·</span>
+                </div>
+              </div>
+              <XPostDate />
+            </div>
+            <div>
+              <button>
+                <svg
+                  className="w-[18.75px] h-[18.75px]"
+                  viewBox="0 0 24 24"
+                >
+                  <g clipPath="url(#92-clip0_2592_269)" clipRule="evenodd">
+                    <path d="M18 4.1H6A1.9 1.9 0 0 0 4.1 6v12c0 1.05.85 1.9 1.9 1.9h12a1.9 1.9 0 0 0 1.9-1.9V6A1.9 1.9 0 0 0 18 4.1M6 2h12c2.21 0 4 1.79 4 4v12c0 2.21-1.79 4-4 4H6c-2.21 0-4-1.79-4-4V6c0-2.21 1.79-4 4-4"></path>
+                    <path d="m6.68 17.8 8.108-11.58h2.532L9.21 17.8z"></path>
+                  </g>
+                  <defs>
+                    <clipPath id="92-clip0_2592_269">
+                      <rect width="20" height="20" x="2" y="2" rx="1"></rect>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <button>
+                <svg
+                  className="w-[18.75px] h-[18.75px]"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2m9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2m7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2"></path>
+                </svg>
+              </button>
+            </div>
           </div>
+
           <div>
-            <button>
-              <svg
-                className="w-[18.75px] h-[18.75px]"
-                viewBox="0 0 24 24"
-              >
-                <g clipPath="url(#92-clip0_2592_269)" clipRule="evenodd">
-                  <path d="M18 4.1H6A1.9 1.9 0 0 0 4.1 6v12c0 1.05.85 1.9 1.9 1.9h12a1.9 1.9 0 0 0 1.9-1.9V6A1.9 1.9 0 0 0 18 4.1M6 2h12c2.21 0 4 1.79 4 4v12c0 2.21-1.79 4-4 4H6c-2.21 0-4-1.79-4-4V6c0-2.21 1.79-4 4-4"></path>
-                  <path d="m6.68 17.8 8.108-11.58h2.532L9.21 17.8z"></path>
-                </g>
-                <defs>
-                  <clipPath id="92-clip0_2592_269">
-                    <rect width="20" height="20" x="2" y="2" rx="1"></rect>
-                  </clipPath>
-                </defs>
-              </svg>
-            </button>
-            <button>
-              <svg
-                className="w-[18.75px] h-[18.75px]"
-                viewBox="0 0 24 24"
-              >
-                <path d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2m9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2m7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2"></path>
-              </svg>
-            </button>
+            <p>Teams complete three successful Falcon 9 missions in under 24 hours</p>
           </div>
-        </div>
 
-        <div>
-          <p>Teams complete three successful Falcon 9 missions in under 24 hours</p>
-        </div>
+          <div>
+            <img className="h-[344px] w-full object-cover" src="https://pbs.twimg.com/media/GfDPO-NW0AAo6Px?format=jpg&name=medium" />
+          </div>
+          <EngagementBar />
 
-        <div>
-          <img className="h-[344px] w-full object-cover" src="https://pbs.twimg.com/media/GfDPO-NW0AAo6Px?format=jpg&name=medium" />
         </div>
-        <EngagementBar />
 
       </div>
     </article>
@@ -196,11 +231,12 @@ function Content({ className }: IContent) {
       <div className="absolute overflow-y-auto scrollbar-main top-0 right-0 bottom-0 left-0 h-full w-full">
 
         <div className="flex items-center justify-center my-20">
-          <div className="bg-purple-500 p-8 w-[630px]">
+          <div className="bg-purple-500/0 p-8 w-[630px]">
             {/* <article className="text-white w-[570px] h-[900px] bg-pink-500">
               Article
             </article> */}
             <XPost />
+
           </div>
         </div>
 

@@ -8,6 +8,9 @@ const themeConfig = {
       }
     },
     extend: {
+      fontFamily: {
+        chirp: 'var(--font-chirp)'
+      },
       colors: {
         primary: {
           DEFAULT: 'var(--primary)'
