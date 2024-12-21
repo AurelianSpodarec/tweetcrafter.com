@@ -15,10 +15,10 @@ export enum TwitterThemeNames {
 }
 
 export enum TwitterThemePrimary {
-  Blue = "twitter-primary-blue",
-  Yellow = "twitter-primary-yellow",
-  Pink = "twitter-primary-pink",
-  Purple = "twitter-primary-purple",
-  Orange = "twitter-primary-orange",
-  Green = "twitter-primary-green"
+  Blue = "twitter-blue",
+  Yellow = "twitter-yellow",
+  Pink = "twitter-pink",
+  Purple = "twitter-purple",
+  Orange = "twitter-orange",
+  Green = "twitter-green"
 }

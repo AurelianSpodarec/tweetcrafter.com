@@ -56,13 +56,13 @@ function BadgeVerifyGold() {
 
 function XPostDate() {
   return (
-    <span className="text-[15px] font-chirp font-thin text-[#71767b]">3h</span>
+    <span className="text-[15px] font-chirp font-thin text-[#71767b]">Dec 18</span>
   )
 }
 
 function XAvatar() {
   return (
-    <img className="h-10 w-10" src="https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg" />
+    <img className="h-10 w-10 rounded-[3px]" src="https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg" />
   )
 }
 
@@ -70,11 +70,11 @@ function EngagementItem({ children, count, className }: any) {
   return (
     <button type="button" className={`${className} cursor-pointer flex`}>
       <div className="flex justify-start items-center text-[15px]">
-        <div className="w-[18.75px] h-[18.75px]">
+        <div className="w-[18.75px] h-[18.75px] fill-[#71767b]">
           {children}
         </div>
         {count &&
-          <span className="px-1">{count}</span>
+          <span className="font-chirp text-[#71767b] text-[13px] px-1">{count}</span>
         }
       </div>
     </button>
@@ -155,36 +155,40 @@ function XUserLabel() {
         <span className="text-[15px] font-chirp font-bold text-[#e7e9ea]">SpaceX</span>
         <BadgeVerifyGold />
       </div>
-      <span className="text-[15px] font-chirp font-thin text-[#71767b] ml-1">@SpaceX</span>
+      <span className="text-[15px] font-chirp font-thin text-[#e7e9ea] ml-1">@SpaceX</span>
     </div>
   )
 }
 
 function XPost() {
   return (
-    <article className="flex bg-[#000000]">
+    <article className="flex bg-[#000000] font-chirp text-[15px] py-3 px-4">
       <div className="flex flex-row">
 
-        <div className="flex items-center flex-basis-[40px] mr-2">
-          <XAvatar />
+        <div className="flex flex-col flex-basis-[40px] mr-2">
+          <div>
+            <XAvatar />
+          </div>
+          <div className="w-[2px] bg-[#333639] mt-1 flex-grow-[1px] mx-auto items-stretch flex-auto" />
         </div>
         <div>
 
-          <div className="flex items-center justify-between">
-            <div className="flex items-center align-center">
+          <div className="flex justify-between mb-0.5">
+            <div className="flex align-center items-start">
               <XUserLabel />
               <div className="items-baseline">
                 <div className="text-[#71767b]">
-                  <span className="text-[#71767b] px-1 font-thin font-chirp text-[15px] line-height-20">·</span>
+                  <span className="text-[#e7e9ea] px-1 font-thin font-chirp text-[15px] line-height-20">·</span>
                 </div>
               </div>
               <XPostDate />
             </div>
-            <div>
+            <div className="flex flex-row gap-2">
               <button>
                 <svg
-                  className="w-[18.75px] h-[18.75px]"
+                  className="w-[18.75px] h-[18.75px] fill-[#71767b]"
                   viewBox="0 0 24 24"
+                  aria-label="Explain this post"
                 >
                   <g clipPath="url(#92-clip0_2592_269)" clipRule="evenodd">
                     <path d="M18 4.1H6A1.9 1.9 0 0 0 4.1 6v12c0 1.05.85 1.9 1.9 1.9h12a1.9 1.9 0 0 0 1.9-1.9V6A1.9 1.9 0 0 0 18 4.1M6 2h12c2.21 0 4 1.79 4 4v12c0 2.21-1.79 4-4 4H6c-2.21 0-4-1.79-4-4V6c0-2.21 1.79-4 4-4"></path>
@@ -199,8 +203,9 @@ function XPost() {
               </button>
               <button>
                 <svg
-                  className="w-[18.75px] h-[18.75px]"
+                  className="w-[18.75px] h-[18.75px] fill-[#71767b]"
                   viewBox="0 0 24 24"
+                  aria-label="More"
                 >
                   <path d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2m9 2c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2m7 0c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2"></path>
                 </svg>
@@ -209,11 +214,13 @@ function XPost() {
           </div>
 
           <div>
-            <p>Teams complete three successful Falcon 9 missions in under 24 hours</p>
+            <p className="font-chirp text-[#e7e9ea] font-medium leading-[20px]">Teams complete three successful Falcon 9 missions in under 24 hours</p>
           </div>
 
-          <div>
-            <img className="h-[344px] w-full object-cover" src="https://pbs.twimg.com/media/GfDPO-NW0AAo6Px?format=jpg&name=medium" />
+          <div className="mt-3">
+            <div className="rounded-[16px] border border-[#2f3336] overflow-hidden">
+              <img className="h-[344px] w-full object-cover" src="https://pbs.twimg.com/media/GfDPO-NW0AAo6Px?format=jpg&name=medium" />
+            </div>
           </div>
           <EngagementBar />
 
@@ -226,7 +233,17 @@ function XPost() {
 
 function Content({ className }: IContent) {
   return (
-    <main className={`${className} bg-[#121212] flex items-center justify-center`}>
+    <main
+      className={`${className} bg-[#121212] flex items-center justify-center bg-repeat`}
+      style={{
+        backgroundImage: `
+          radial-gradient(circle, #0e0e0f 5%, transparent 50%),
+          radial-gradient(circle, #0e0e0f 5%, transparent 50%)
+        `,
+        backgroundPosition: '0 0, 10px 10px',
+        backgroundSize: '20px 20px'
+      }}
+    >
       {/* <div className="relative h-full w-full overflow-auto"> */}
       <div className="absolute overflow-y-auto scrollbar-main top-0 right-0 bottom-0 left-0 h-full w-full">
 

@@ -22,6 +22,12 @@ const themeConfig = {
         // Twitter
         // ===================================================
         twitter: {
+          blue: "#1d9bf0",
+          yellow: "#ffd400",
+          pink: "#f91880",
+          purple: "#7856ff",
+          orange: "#ff7a00",
+          green: "#00ba7c",
           primary: {
             DEFAULT: 'var(--twitter-primary)'
           },
@@ -34,7 +40,15 @@ const themeConfig = {
       //   DEFAULT: 'var(--border-default)'
       // }
     }
-  }
+  },
+  safelist: [
+    'bg-twitter-blue',
+    'bg-twitter-yellow',
+    'bg-twitter-pink',
+    'bg-twitter-purple',
+    'bg-twitter-orange',
+    'bg-twitter-green',
+  ]
 }
 
 export default themeConfig;
