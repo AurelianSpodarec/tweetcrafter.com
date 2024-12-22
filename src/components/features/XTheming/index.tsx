@@ -20,15 +20,21 @@ function ThemePrimaryButton() {
   )
 }
 
+const themeDisplayNames = {
+  'twitter-light': 'Lights',
+  'twitter-dim': 'Dim',
+  'twitter-lights-out': 'Lights out',
+};
+
 function FeatureXTheming() {
   const isOpen = getNavigationStateOf("xtheme")
 
   const { twitterTheme, setTwitterTheme, twitterPrimaryTheme, setTwitterPrimaryTheme } = useTwitterThemeContext();
 
   return (
-    <div className={`${isOpen ? "" : "hidden"} absolute z-30 top-0 bottom-0 left-[55px] w-[200px]`}>
+    <div className={`${isOpen ? "" : "hidden"} absolute z-30 top-0 bottom-0 left-[55px] w-[190px]`}>
       <div className="bg-[#0c0e11] relative h-full flex">
-        <div className="overflow-auto px-4 space-y-4">
+        <div className="overflow-auto px-4 space-y-4 w-full">
 
 
           <div className="flex flex-col">
@@ -44,9 +50,14 @@ function FeatureXTheming() {
                 console.log(theme);
                 const isActive = theme === twitterPrimaryTheme
                 return (
-                  <div
+                  <button
+                    type="button"
                     key={theme}
-                    className={`p-2 h-10 w-10 rounded-lg cursor-pointer bg-${theme} ${isActive ? 'font-bold' : ''}`}
+                    className={`
+                      p-2 h-11 w-11 rounded-lg cursor-pointer 
+                      bg-${theme} 
+                      ${isActive ? 'font-bold shadow-[0px_0px_15px_0px_rgba(232,232,255,0.9)]' : ''}
+                    `}
                     onClick={() => setTwitterPrimaryTheme(theme)}
                   >
                     {/* {theme} */}
@@ -58,20 +69,32 @@ function FeatureXTheming() {
                         <path d="m9.64 18.952-5.55-4.861 1.317-1.504 3.951 3.459 8.459-10.948L19.4 6.32z"></path>
                       </svg>
                       : ""}
-                  </div>
+                  </button>
                 );
               })}
             </div>
 
           </div>
           <h3>Background</h3>
-          <div className="flex flex-col">
+          <div className="flex flex-col space-y-4">
             {Object.values(TwitterThemeNames).map(theme => {
               const isActive = theme === twitterTheme
+              console.log(theme)
               return (
-                <div key={theme} onClick={() => setTwitterTheme(theme)}>
-                  {theme}
-                </div>
+                <button
+                  type="button"
+                  key={theme}
+                  onClick={() => setTwitterTheme(theme)}
+                  className={`
+                    py-3 rounded-lg
+                    border border-gray-50/10
+                    bg-${theme} 
+                    ${theme === 'twitter-light' ? 'text-black' : ''} 
+                    ${isActive ? 'font-semibold shadow-[0px_0px_15px_0px_rgba(232,232,255,0.9)]' : ''}
+                  `}
+                >
+                  {themeDisplayNames[theme]}
+                </button>
               )
             })}
           </div>

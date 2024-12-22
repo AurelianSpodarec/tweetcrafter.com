@@ -152,7 +152,7 @@ function XUserLabel() {
   return (
     <div className="flex">
       <div className="flex items-center">
-        <span className="text-[15px] font-chirp font-bold text-[#e7e9ea]">SpaceX</span>
+        <span className="text-[15px] font-chirp font-bold text-twitter-foreground">SpaceX</span>
         <BadgeVerifyGold />
       </div>
       <span className="text-[15px] font-chirp font-thin text-[#e7e9ea] ml-1">@SpaceX</span>
@@ -162,7 +162,7 @@ function XUserLabel() {
 
 function XPost() {
   return (
-    <article className="flex bg-[#000000] font-chirp text-[15px] py-3 px-4">
+    <article className="flex bg-twitter-bg font-chirp text-[15px] py-3 px-4">
       <div className="flex flex-row">
 
         <div className="flex flex-col flex-basis-[40px] mr-2">
@@ -214,7 +214,10 @@ function XPost() {
           </div>
 
           <div>
-            <p className="font-chirp text-[#e7e9ea] font-medium leading-[20px]">Teams complete three successful Falcon 9 missions in under 24 hours</p>
+            <p className="font-chirp text-twitter-foreground font-medium leading-[20px]">Teams complete three successful Falcon 9 missions in under 24 hours</p>
+            <div>
+              <span className="text-[15px] text-twitter-primary">Show more</span>
+            </div>
           </div>
 
           <div className="mt-3">

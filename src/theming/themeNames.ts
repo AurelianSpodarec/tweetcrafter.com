@@ -10,7 +10,7 @@ export enum DashboardThemeNames {
 // Twitter
 export enum TwitterThemeNames {
   Default = 'twitter-light',
-  Dark = 'twitter-dark',
+  Dim = 'twitter-dim',
   LightsOut = "twitter-lights-out"
 }
 

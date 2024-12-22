@@ -11,10 +11,8 @@ interface TwitterThemeContextProps {
 const TwitterThemeContext = createContext<TwitterThemeContextProps | undefined>(undefined);
 
 export const TwitterThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [twitterTheme, setTwitterTheme] = useState<TwitterThemeNames>(TwitterThemeNames.Default);
-  const [twitterPrimaryTheme, setTwitterPrimaryTheme] = useState<TwitterThemePrimary>(
-    TwitterThemePrimary.Blue
-  );
+  const [twitterTheme, setTwitterTheme] = useState<TwitterThemeNames>(TwitterThemeNames.LightsOut)
+  const [twitterPrimaryTheme, setTwitterPrimaryTheme] = useState<TwitterThemePrimary>(TwitterThemePrimary.Blue)
 
   return (
     <TwitterThemeContext.Provider

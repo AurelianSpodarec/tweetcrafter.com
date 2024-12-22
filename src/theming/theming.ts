@@ -8,9 +8,6 @@ export const theming = plugin(
     addBase({
       ':root': {
         '--border-default': theme('border.lg'),
-
-        '--twitter-blue': theme('colors.twitter.blue'),
-        '--twitter-yellow': theme('colors.twitter.yellow')
       },
       [`.${DashboardThemeNames.Light}`]: {
         '--primary': theme('colors.pink.600'),
@@ -37,13 +34,16 @@ export const theming = plugin(
 
       // Twitter Theme
       [`.${TwitterThemeNames.Default}`]: {
-        '--twitter-card': theme('colors.gray.200'),
+        '--twitter-bg': theme('colors.twitter.white'),
+        '--twitter-foreground': theme('colors.twitter.black2')
       },
-      [`.${TwitterThemeNames.Dark}`]: {
-        '--twitter-card': theme('colors.gray.500'),
+      [`.${TwitterThemeNames.Dim}`]: {
+        '--twitter-bg': theme('colors.twitter.dim'),
+        '--twitter-foreground': theme('colors.twitter.white2')
       },
       [`.${TwitterThemeNames.LightsOut}`]: {
-        '--twitter-card': theme('colors.red.900'),
+        '--twitter-bg': theme('colors.twitter.black'),
+        '--twitter-foreground': theme('colors.twitter.white3')
       },
       // TwitterThemePrimary
       [`.${TwitterThemePrimary.Blue}`]: {
@@ -59,7 +59,7 @@ export const theming = plugin(
         '--twitter-primary': theme('colors.twitter.purple'),
       },
       [`.${TwitterThemePrimary.Orange}`]: {
-        '--twitter-primary': theme('colors.twitter.yellow'),
+        '--twitter-primary': theme('colors.twitter.orange'),
       },
       [`.${TwitterThemePrimary.Green}`]: {
         '--twitter-primary': theme('colors.twitter.green'),
