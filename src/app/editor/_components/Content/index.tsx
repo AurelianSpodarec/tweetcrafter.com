@@ -74,7 +74,7 @@ function EngagementItem({ children, count, className }: any) {
           {children}
         </div>
         {count &&
-          <span className="font-chirp text-[#71767b] text-[13px] px-1">{count}</span>
+          <span className="font-chirp text-twitter-foreground text-[13px] px-1">{count}</span>
         }
       </div>
     </button>
@@ -169,7 +169,7 @@ function XPost() {
           <div>
             <XAvatar />
           </div>
-          <div className="w-[2px] bg-[#333639] mt-1 flex-grow-[1px] mx-auto items-stretch flex-auto" />
+          {/* <div className="w-[2px] bg-[#333639] mt-1 flex-grow-[1px] mx-auto items-stretch flex-auto" /> */}
         </div>
         <div>
 
@@ -220,11 +220,11 @@ function XPost() {
             </div>
           </div>
 
-          <div className="mt-3">
+          {/* <div className="mt-3">
             <div className="rounded-[16px] border border-[#2f3336] overflow-hidden">
               <img className="h-[344px] w-full object-cover" src="https://pbs.twimg.com/media/GfDPO-NW0AAo6Px?format=jpg&name=medium" />
             </div>
-          </div>
+          </div> */}
           <EngagementBar />
 
         </div>

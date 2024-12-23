@@ -10,6 +10,7 @@ import FeatureDecoration from "@/components/features/Decoration"
 import FeatureXTheming from "@/components/features/XTheming"
 import FeatureXTypes from "@/components/features/XTypes"
 import FeatureXUsers from "@/components/features/XUsers"
+import FeatureXAnatomy from "@/components/features/XAnatomy"
 
 function NavItem({ item }: { item: any }) {
   const dispatch = useDispatch()
@@ -41,6 +42,7 @@ function Navigation() {
       <FeatureXTypes />
       <FeatureXUsers />
       <FeatureXTheming />
+      <FeatureXAnatomy />
       <FeatureDecoration />
     </>
   )

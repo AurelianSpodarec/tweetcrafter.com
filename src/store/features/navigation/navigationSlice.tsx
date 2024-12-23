@@ -6,6 +6,7 @@ const initialState: INavigationState = {
     xtypes: false,
     xusers: false,
     xtheme: false,
+    xanatomy: false,
     decoration: false,
   },
   componentRules: {},
