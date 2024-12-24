@@ -3,7 +3,7 @@
 import Content from "./_components/Content"
 import Header from "./_components/Header"
 import Navigation from "./_components/Navigation"
-import Widget from "./_components/Widget"
+import KitStyles from "./_components/KitStyles"
 
 function Editor() {
   return (
@@ -13,7 +13,7 @@ function Editor() {
         <Navigation />
         <div className="flex w-full flex-row">
           <Content className="flex grow flex-col overflow-hidden relative h-full" />
-          {/* <Widget /> */}
+          <KitStyles />
         </div>
       </div>
     </div>

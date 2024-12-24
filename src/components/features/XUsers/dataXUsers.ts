@@ -185,6 +185,106 @@ const dataXUsers: IXUser[] = [
     "require_some_consent": false
   },
   {
+    "id": 19725644,
+    "id_str": "19725644",
+    "name": "Neil deGrasse Tyson",
+    "screen_name": "neiltyson",
+    "location": "New York City",
+    "profile_location": null,
+    "description": "Astrophysicist\nhttps://t.co/sujhGiva2J",
+    "url": "https://t.co/FoylFeRQzY",
+    "entities": {
+      "url": {
+        "urls": [
+          {
+            "url": "https://t.co/FoylFeRQzY",
+            "expanded_url": "http://www.neildegrassetyson.com",
+            "display_url": "neildegrassetyson.com",
+            "indices": [
+              0,
+              23
+            ]
+          }
+        ]
+      },
+      "description": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/sujhGiva2J",
+            "expanded_url": "https://braid.ai/neildegrassetyson",
+            "display_url": "braid.ai/neildegrassety…",
+            "indices": [
+              15,
+              38
+            ]
+          }
+        ]
+      }
+    },
+    "protected": false,
+    "followers_count": 14501417,
+    "fast_followers_count": 0,
+    "normal_followers_count": 14501417,
+    "friends_count": 27,
+    "listed_count": 40591,
+    "created_at": "Thu Jan 29 18:40:26 +0000 2009",
+    "favourites_count": 6,
+    "utc_offset": null,
+    "time_zone": null,
+    "geo_enabled": false,
+    "verified": false,
+    "statuses_count": 8201,
+    "media_count": 1185,
+    "lang": null,
+    "contributors_enabled": false,
+    "is_translator": false,
+    "is_translation_enabled": true,
+    "profile_background_color": "DBE9ED",
+    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+    "profile_background_tile": false,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/1554062945096794113/-MPAg1pY_normal.jpg",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1554062945096794113/-MPAg1pY_normal.jpg",
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/19725644/1730434317",
+    "profile_link_color": "CC3366",
+    "profile_sidebar_border_color": "DBE9ED",
+    "profile_sidebar_fill_color": "E6F6F9",
+    "profile_text_color": "333333",
+    "profile_use_background_image": true,
+    "default_profile": false,
+    "default_profile_image": false,
+    "pinned_tweet_ids": [
+      1608938917704929300
+    ],
+    "pinned_tweet_ids_str": [
+      "1608938917704929282"
+    ],
+    "has_custom_timelines": false,
+    "can_dm": false,
+    "can_media_tag": true,
+    "following": false,
+    "follow_request_sent": false,
+    "notifications": false,
+    "muting": false,
+    "blocking": false,
+    "blocked_by": false,
+    "want_retweets": false,
+    "advertiser_account_type": "none",
+    "advertiser_account_service_levels": [],
+    "analytics_type": "enabled",
+    "profile_interstitial_type": "",
+    "business_profile_state": "none",
+    "translator_type": "none",
+    "withheld_in_countries": [],
+    "followed_by": false,
+    "ext_highlighted_label": {},
+    "ext_is_blue_verified": true,
+    "require_some_consent": false
+  },
+  {
 
     "id": 21586418,
     "id_str": "21586418",
