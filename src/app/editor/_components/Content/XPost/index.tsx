@@ -7,6 +7,8 @@ import XAvatar from "./XAvatar"
 import XPostDate from "./XPostDate"
 import XDisplayName from "./XDisplayName"
 import XUserHandle from "./XUserhandle"
+import dataXUsers from "@/components/features/XUsers/dataXUsers"
+import { IXUser } from "@/interfaces/IXUser"
 
 function EngagementBar() {
   return (
@@ -75,23 +77,25 @@ function EngagementBar() {
   )
 }
 
-function XUserLabel() {
+function XUserLabel({ user }: { user: IXUser }) {
   return (
     <div className="flex">
-      <XDisplayName />
-      <XUserHandle name="SpaceX" />
+      <XDisplayName name={user.name} verifyBlue={user.ext_is_blue_verified} verifyType={user.ext_verified_type} />
+      <XUserHandle name={user.screen_name} />
     </div>
   )
 }
 
 function XPost() {
+  const user = dataXUsers[4]
+
   return (
     <article className="bg-twitter-bg font-chirp text-[15px] py-3 px-4 w-full">
       <div className="flex flex-row">
 
         <div className="flex flex-col flex-basis-[40px] mr-2">
           <div>
-            <XAvatar />
+            <XAvatar src={user.profile_image_url_https} />
           </div>
           {/* <div className="w-[2px] bg-[#333639] mt-1 flex-grow-[1px] mx-auto items-stretch flex-auto" /> */}
         </div>
@@ -99,7 +103,7 @@ function XPost() {
 
           <div className="flex justify-between mb-0.5 leading-[20px]">
             <div className="flex align-center items-start">
-              <XUserLabel />
+              <XUserLabel user={user} />
               <div className="items-baseline">
                 <div className="text-[#71767b]">
                   <span className="text-[#e7e9ea] px-1 font-thin font-chirp text-[15px] line-height-20">·</span>

@@ -30,7 +30,7 @@ function Content({ className }: IContent) {
             <div className="text-white p-10 rounded-xl bg-purple-500">
               <div className="w-[600px]">
                 <XProfile />
-                <XPost />
+                {/* <XPost /> */}
               </div>
             </div>
 

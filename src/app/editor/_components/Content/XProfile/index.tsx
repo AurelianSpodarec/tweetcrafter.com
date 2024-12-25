@@ -1,34 +1,57 @@
 'use client'
 
+import dataXUsers from "@/components/features/XUsers/dataXUsers"
 import XDisplayName from "../XPost/XDisplayName"
+import XProfileBanner from "./XProfileBanner";
+
+function formatNumber(num) {
+  const scales = ['', 'K', 'M', 'B', 'T', 'P', 'E']; // Add more as needed
+  const tier = Math.floor(Math.log10(Math.abs(num)) / 3); // Determine the tier (thousands, millions, etc.)
+
+  if (tier === 0) return num.toString(); // No formatting needed for numbers < 1,000
+
+  const scale = scales[tier] || ''; // Get the suffix for the tier
+  const scaledNum = Math.floor(num / Math.pow(10, tier * 3 - 1)) / 10; // Truncate to one decimal place
+
+  return scaledNum + scale; // Add the suffix
+}
+
+function XPostsCount({ count }) {
+  return (
+    <span className="text-[#71767b] font-chirp text-[13px] leading-[16px]">{formatNumber(count)} posts</span>
+  )
+}
 
 function XProfile() {
+  const user = dataXUsers[24]
+  // console.log(user.ext_verified_type)
   return (
     <div>
-      <div className="bg-twitter-bg px-4">
-        <svg
-          aria-hidden="true"
-          className="w-[20px] h-[20px] fill-[#eff3f4] leading-[20px]"
-          color="#EFF3F4"
-          viewBox="0 0 24 24"
-        >
-          <path d="m7.414 13 5.043 5.04-1.414 1.42L3.586 12l7.457-7.46 1.414 1.42L7.414 11H21v2z"></path>
-        </svg>
-        <XDisplayName name="SpaceX" fontSize="large" />
-        9,581 posts
+      <div className="flex items-center bg-twitter-bg px-4 h-[53px]">
+        <div className="min-w-[56px]">
+          <svg
+            aria-hidden="true"
+            className="w-[20px] h-[20px] fill-[#eff3f4] leading-[20px] item-end"
+            color="#EFF3F4"
+            viewBox="0 0 24 24"
+          >
+            <path d="m7.414 13 5.043 5.04-1.414 1.42L3.586 12l7.457-7.46 1.414 1.42L7.414 11H21v2z"></path>
+          </svg>
+        </div>
+        <div className="flex flex-col align-center">
+          <XDisplayName name={user.name} fontSize="profileHeader" verifyBlue={user.ext_is_blue_verified} verifyType={user.ext_verified_type} />
+          <XPostsCount count={user.statuses_count} />
+        </div>
       </div>
 
-      <div className="relative">
-        <div className="absolute top-0 right-0 bottom-0 left-0 bg-center bg-no-repeat" style={{ backgroundImage: 'url(https://pbs.twimg.com/profile_banners/34743251/1681251194/1080x360)' }} />
-        <img src="https://pbs.twimg.com/profile_banners/34743251/1681251194/1080x360" />
-      </div>
+      <XProfileBanner src={user.profile_banner_url} />
 
       <section className="px-4 py-3 bg-twitter-bg">
 
         <div className="flex flex-row flex-wrap justify-between items-start">
 
           <div className="-mt-[15%] mb-3 z-10">
-            <img className="w-[145px] h-[145px] rounded-[11px] border-[4px] border-black" src="https://pbs.twimg.com/profile_images/1321163587679784960/0ZxKlEKB_400x400.jpg" />
+            <img className="w-[145px] h-[145px] rounded-[11px] border-[4px] border-black" src={user.profile_image_url_https} />
           </div>
 
           <div className="flex items-end space-x-2">
@@ -61,11 +84,11 @@ function XProfile() {
         </div>
 
         <div>
-          <XDisplayName name="SpaceX" fontSize="large" />
+          <XDisplayName name={user.name} fontSize="large" verifyBlue={user.ext_is_blue_verified} verifyType={user.ext_verified_type} />
         </div>
 
         <div>
-          <span>SpaceX designs, manufactures and launches the world’s most advanced rockets and spacecraft</span>
+          <span>{user.description}</span>
         </div>
 
         <div>
