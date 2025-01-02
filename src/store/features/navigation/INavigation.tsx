@@ -18,6 +18,7 @@ export interface INavigationMenu {
   xusers: boolean,
   xtheme: boolean,
   xanatomy: boolean,
+  frame: boolean,
   decoration: boolean,
 }
 

@@ -13,7 +13,7 @@ function Editor() {
         <Navigation />
         <div className="flex w-full flex-row">
           <Content className="flex grow flex-col overflow-hidden relative h-full" />
-          <KitStyles />
+          {/* <KitStyles /> */}
         </div>
       </div>
     </div>

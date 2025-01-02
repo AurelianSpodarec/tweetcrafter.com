@@ -125,7 +125,9 @@ function XProfile() {
         </div>
 
         <div id="ProfileMetrics">
-          120 Followers
+          <div>
+            {user.followers_count} Following
+          </div>
           27.3M Followers
           1 Subscriptions
         </div>
