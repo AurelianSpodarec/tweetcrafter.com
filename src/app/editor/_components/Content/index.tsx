@@ -1,5 +1,6 @@
 'use client'
 
+import { getFrameSelectedBackgroundColor } from "@/store/features/frame/frameSelectors"
 import XPost from "./XPost"
 import XProfile from "./XProfile"
 
@@ -8,6 +9,9 @@ interface IContent {
 }
 
 function Content({ className }: IContent) {
+
+  const frameColor = getFrameSelectedBackgroundColor()
+
   return (
     <main
       className={`${className} ml-[75px] bg-[#121212] flex items-center justify-center bg-repeat`}
@@ -26,8 +30,8 @@ function Content({ className }: IContent) {
       <div className="absolute overflow-y-auto scrollbar-main top-0 right-0 bottom-0 left-0 h-full w-full">
 
         <div className="flex items-center justify-center my-20">
-          <div className="bg-purple-500/0 p-8">
-            <div className="text-white p-10 rounded-xl bg-purple-500">
+          <div className="p-8">
+            <div className={`text-white p-10 rounded-xl`} style={{ background: `${frameColor.hex}`}}>
               <div className="w-[600px]">
                 <XProfile />
                 {/* <XPost /> */}

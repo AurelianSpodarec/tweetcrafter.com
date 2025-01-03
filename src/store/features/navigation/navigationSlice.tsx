@@ -1,6 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { INavigationState, INavigationComponentRules } from "./INavigation"
 
+
+// Frame Colors
+// Frame Patterns (mix with colors)
+// Frame Gradients
+// Wallpapers/images
+// Gutter: Padding, inset, picture 
+// Frame border
+// Frame Watermark
+
 const initialState: INavigationState = {
   navState: {
     xtypes: false,
