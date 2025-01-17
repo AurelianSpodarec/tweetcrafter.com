@@ -2,21 +2,12 @@
 
 import { getNavigationStateOf } from "@/store/features/navigation/navigationSelectors";
 import DisplayColors from "./_components/DisplayColors";
+import DisplayPatterns from "./_components/DisplayPatterns";
+import DisplayGradients from "./_components/DisplayGradients";
 
 interface IDefaultObject {
   [key: string]: any
 }
-
-
-
-
-
-
-// interface IDefaultObject {
-//   name: string;
-//   colors?: IColor[]; // Array of colors for color palettes
-//   gradients?: IGradient[]; // Array of gradients for gradient palettes
-// }
 
 interface IFrameItem {
   default: IDefaultObject;
@@ -35,6 +26,8 @@ function FeatureFrame() {
 
 
           <DisplayColors />
+          <DisplayGradients />
+          <DisplayPatterns />
 
         </div>
       </div>

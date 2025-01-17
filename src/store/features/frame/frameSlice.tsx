@@ -6,29 +6,37 @@ const initialState: IFrameState = {
     name: "",
     hex: ""
   },
-  pattern: "",
-  gradientType: ""
+  pattern: {
+    name: "",
+    backgroundImage: ""
+  },
+  gradientType: {
+    type: "",
+    name: "",
+    colors: "",
+    angle: "",
+    shape: "",
+    position: ""
+  }
 };
 
 const frameSlice = createSlice({
   name: 'frame',
   initialState,
   reducers: {
-    setBackgroundColor(state, action: PayloadAction<{ name: string; hex: string }>) {
+    setBackgroundColor(state, action) {
       state.backgroundColor = action.payload;
     },
-    setPattern(state, action: PayloadAction<string>) {
+    setFramePattern(state, action) {
       state.pattern = action.payload;
     },
-    setGradientType(state, action: PayloadAction<string>) {
+    setFrameGradientType(state, action) {
       state.gradientType = action.payload;
     },
   }
 });
 
-// HELPERS
-// ======================================================================================
 
-export const { setBackgroundColor } = frameSlice.actions;
+export const { setBackgroundColor, setFramePattern, setFrameGradientType } = frameSlice.actions;
 
 export default frameSlice.reducer;

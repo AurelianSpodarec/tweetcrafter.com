@@ -1,6 +1,6 @@
 'use client'
 
-import { getFrameSelectedBackgroundColor } from "@/store/features/frame/frameSelectors"
+import { getFrameGradient, getFrameSelectedBackgroundColor, getFrameSelectedPattern } from "@/store/features/frame/frameSelectors"
 import XPost from "./XPost"
 import XProfile from "./XProfile"
 
@@ -11,6 +11,10 @@ interface IContent {
 function Content({ className }: IContent) {
 
   const frameColor = getFrameSelectedBackgroundColor()
+  const framePattern = getFrameSelectedPattern()
+  const frameGradient = getFrameGradient()
+
+  console.log("woow", frameGradient)
 
   return (
     <main
@@ -31,7 +35,7 @@ function Content({ className }: IContent) {
 
         <div className="flex items-center justify-center my-20">
           <div className="p-8">
-            <div className={`text-white p-10 rounded-xl`} style={{ background: `${frameColor.hex}`}}>
+            <div className={`text-white p-10 rounded-xl`} style={{ background: `url("${framePattern.backgroundImage}"), ${frameColor.hex}`}}>
               <div className="w-[600px]">
                 <XProfile />
                 {/* <XPost /> */}
