@@ -2196,6 +2196,12 @@ const dataXUsers: IXUser[] = [
     "profile_location": null,
     "description": "There's space for everybody. ✨\n\nVerification: https://t.co/8nok3NP4PW",
     "url": "https://t.co/9NkQJKAnuU",
+    "birthdate": {
+      "day": 29,
+      "month": 7,
+      "year": 1958,
+      "visibility": "public"
+    },
     "entities": {
       "url": {
         "urls": [
@@ -2284,106 +2290,6 @@ const dataXUsers: IXUser[] = [
     "withheld_in_countries": [],
     "followed_by": false,
     "ext_highlighted_label": {},
-    "ext_verified_type": "Government",
-    "ext_is_blue_verified": true,
-    "require_some_consent": false
-  },
-  {
-    "id": 14091091,
-    "id_str": "14091091",
-    "name": "Hubble",
-    "screen_name": "NASAHubble",
-    "location": "Goddard Space Flight Center",
-    "profile_location": null,
-    "description": "The official X account for the NASA Hubble Space Telescope, managed and operated by NASA's Goddard Space Flight Center.",
-    "url": "https://t.co/3bfzzswzV0",
-    "entities": {
-      "url": {
-        "urls": [
-          {
-            "url": "https://t.co/3bfzzswzV0",
-            "expanded_url": "http://www.nasa.gov/mission_pages/hubble/main/index.html",
-            "display_url": "nasa.gov/mission_pages/…",
-            "indices": [
-              0,
-              23
-            ]
-          }
-        ]
-      },
-      "description": {
-        "hashtags": [],
-        "symbols": [],
-        "user_mentions": [],
-        "urls": []
-      }
-    },
-    "protected": false,
-    "followers_count": 9089168,
-    "fast_followers_count": 0,
-    "normal_followers_count": 9089168,
-    "friends_count": 69,
-    "listed_count": 15260,
-    "created_at": "Thu Mar 06 20:15:02 +0000 2008",
-    "favourites_count": 1250,
-    "utc_offset": null,
-    "time_zone": null,
-    "geo_enabled": false,
-    "verified": false,
-    "statuses_count": 7859,
-    "media_count": 2775,
-    "lang": null,
-    "contributors_enabled": false,
-    "is_translator": false,
-    "is_translation_enabled": false,
-    "profile_background_color": "000000",
-    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
-    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
-    "profile_background_tile": true,
-    "profile_image_url": "http://pbs.twimg.com/profile_images/3468011581/efb985f24af0a814a722457a768f3cc5_normal.jpeg",
-    "profile_image_url_https": "https://pbs.twimg.com/profile_images/3468011581/efb985f24af0a814a722457a768f3cc5_normal.jpeg",
-    "profile_banner_url": "https://pbs.twimg.com/profile_banners/14091091/1669391293/1500x500",
-    "profile_link_color": "0000FF",
-    "profile_sidebar_border_color": "000000",
-    "profile_sidebar_fill_color": "E0FF92",
-    "profile_text_color": "000000",
-    "profile_use_background_image": true,
-    "default_profile": false,
-    "default_profile_image": false,
-    "pinned_tweet_ids": [],
-    "pinned_tweet_ids_str": [],
-    "has_custom_timelines": true,
-    "can_dm": false,
-    "can_media_tag": true,
-    "following": false,
-    "follow_request_sent": false,
-    "notifications": false,
-    "muting": false,
-    "blocking": false,
-    "blocked_by": false,
-    "want_retweets": false,
-    "advertiser_account_type": "none",
-    "advertiser_account_service_levels": [],
-    "analytics_type": "enabled",
-    "profile_interstitial_type": "",
-    "business_profile_state": "none",
-    "translator_type": "none",
-    "withheld_in_countries": [],
-    "followed_by": false,
-    "ext_highlighted_label": {
-      "label": {
-        "description": "NASA",
-        "badge": {
-          "url": "https://pbs.twimg.com/profile_images/1321163587679784960/0ZxKlEKB_bigger.jpg"
-        },
-        "url": {
-          "url_type": "deep_link",
-          "url": "https://twitter.com/NASA"
-        },
-        "user_label_type": "business_label",
-        "user_label_display_type": "badge"
-      }
-    },
     "ext_verified_type": "Government",
     "ext_is_blue_verified": true,
     "require_some_consent": false

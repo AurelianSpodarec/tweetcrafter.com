@@ -18,6 +18,12 @@ export interface IXUser {
   } | null
   description: string | null;
   url: null | string;
+  birthdate?: {
+    day: number,
+    month: number,
+    year: number,
+    visibility?: "public" | "private"
+  }
   entities?: {
     url?: {
       urls: {

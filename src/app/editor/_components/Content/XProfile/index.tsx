@@ -3,6 +3,8 @@
 import dataXUsers from "@/components/features/XUsers/dataXUsers"
 import XDisplayName from "../XPost/XDisplayName"
 import XProfileBanner from "./XProfileBanner";
+import React from "react";
+import Link from "next/link";
 
 function formatNumber(num) {
   const scales = ['', 'K', 'M', 'B', 'T', 'P', 'E']; // Add more as needed
@@ -15,12 +17,86 @@ function formatNumber(num) {
 
   return scaledNum + scale; // Add the suffix
 }
+function XProfileDescription({ description, entities }) {
+  // Function to convert plain text URLs to anchor tags
+  const createMarkup = (text) => {
+    // Split the text by newlines to preserve line breaks
+    const lines = text.split('\n');
+
+    // Extract URLs from entities
+    const urlMap = {};
+    entities.description.urls.forEach((urlEntity) => {
+      urlMap[urlEntity.url] = urlEntity.display_url; // Map the original URL to the display URL
+    });
+
+    return lines.map((line, lineIndex) => {
+      const urlRegex = /(https?:\/\/[^\s]+)/g;
+      const parts = line.split(urlRegex); // Split the line by URLs
+
+      return (
+        <div key={lineIndex}>
+          {parts.map((part, partIndex) => {
+            // Check if part is a URL
+            if (urlRegex.test(part)) {
+              return (
+                <a
+                  key={partIndex}
+                  href={part}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-twitter-primary"
+                >
+                  {urlMap[part] || part}
+                </a>
+              );
+            }
+
+            return <span key={partIndex}>{part}</span>;
+          })}
+          {lineIndex < lines.length - 1 && (
+            <>
+              <br />
+            </>
+          )}
+        </div>
+      );
+    });
+  };
+
+  return (
+    <div
+      dir="auto"
+      className="x-profile-description"
+      style={{ color: "rgb(231, 233, 234)" }}
+    >
+      {createMarkup(description)}
+    </div>
+  );
+}
+
 
 function XPostsCount({ count }) {
   return (
     <span className="text-[#71767b] font-chirp text-[13px] leading-[16px]">{formatNumber(count)} posts</span>
   )
 }
+
+
+const RenderWebsiteLink = ({ data }) => {
+  const urlData = data.entities?.url?.urls[0] || {};
+
+  const expandedUrl = urlData.expanded_url || null;
+  const displayUrl = urlData.display_url || expandedUrl;
+
+  return <Link href={expandedUrl} target="_blank" className="text-twitter-primary" rel="noopener noreferrer">{displayUrl}</Link>
+};
+
+const RenderBirthdate = ({ user }) => {
+  if(!user.birthdate) <></>
+  return `Born ${user.birthdate.month}/${user.birthdate.day}/${user.birthdate.year}`
+};
+
+
 
 function XProfile() {
   const user = dataXUsers[24]
@@ -88,66 +164,62 @@ function XProfile() {
         </div>
 
         <div>
-          <span>{user.description}</span>
+          {/* <span>{user.description}</span> */}
+          <XProfileDescription description={user.description} entities={user.entities} />
         </div>
 
-        <div>
-          <span className="inline-block">
-            <svg
-              aria-hidden="true"
-              className="h-[18.75px] w-[18.75px]"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 7c-1.93 0-3.5 1.57-3.5 3.5S10.07 14 12 14s3.5-1.57 3.5-3.5S13.93 7 12 7m0 5c-.827 0-1.5-.673-1.5-1.5S11.173 9 12 9s1.5.673 1.5 1.5S12.827 12 12 12m0-10c-4.687 0-8.5 3.813-8.5 8.5 0 5.967 7.621 11.116 7.945 11.332l.555.37.555-.37c.324-.216 7.945-5.365 7.945-11.332C20.5 5.813 16.687 2 12 2m0 17.77c-1.665-1.241-6.5-5.196-6.5-9.27C5.5 6.916 8.416 4 12 4s6.5 2.916 6.5 6.5c0 4.073-4.835 8.028-6.5 9.27"></path>
-            </svg>
-            <span className="inline">Earth</span>
-          </span>
-          <span className="inline-block">
-            <svg
-              aria-hidden="true"
-              className="h-[18.75px] w-[18.75px]"
-              viewBox="0 0 24 24"
-            >
-              <path d="M18.36 5.64a4.985 4.985 0 0 0-7.07 0L9.88 7.05 8.46 5.64l1.42-1.42c2.73-2.73 7.16-2.73 9.9 0 2.73 2.74 2.73 7.17 0 9.9l-1.42 1.42-1.41-1.42 1.41-1.41a4.985 4.985 0 0 0 0-7.07m-2.12 3.53-7.07 7.07-1.41-1.41 7.07-7.07zm-12.02.71 1.42-1.42 1.41 1.42-1.41 1.41a4.985 4.985 0 0 0 0 7.07 4.985 4.985 0 0 0 7.07 0l1.41-1.41 1.42 1.41-1.42 1.42c-2.73 2.73-7.16 2.73-9.9 0-2.73-2.74-2.73-7.17 0-9.9"></path>
-            </svg>
-            <span className="inline">spacex.com</span>
-          </span>
-          <span className="inline-block">
-            <svg
-              aria-hidden="true"
-              className="h-[18.75px] w-[18.75px]"
-              viewBox="0 0 24 24"
-            >
-              <path d="M7 4V3h2v1h6V3h2v1h1.5C19.89 4 21 5.12 21 6.5v12c0 1.38-1.11 2.5-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-12A2.5 2.5 0 0 1 5.5 4zm0 2H5.5c-.27 0-.5.22-.5.5v12c0 .28.23.5.5.5h13c.28 0 .5-.22.5-.5v-12c0-.28-.22-.5-.5-.5H17v1h-2V6H9v1H7zm0 6h2v-2H7zm0 4h2v-2H7zm4-4h2v-2h-2zm0 4h2v-2h-2zm4-4h2v-2h-2z"></path>
-            </svg>
-            <span className="inline">Joined April 2009</span>
-          </span>
-        </div>
 
-        <div id="ProfileMetrics">
-          <div>
-            {user.followers_count} Following
-          </div>
-          27.3M Followers
-          1 Subscriptions
-        </div>
-
-        <div>
-          Followed BY:
-        </div>
-
-        <div>
-          We're Hiring
-          <nav>
-            <div>
-              Title
-              Location
+        <section>
+          <div className="inline-block fill-[#71767b]">
+            <div className="flex">
+              <svg className="h-[18.75px] w-[18.75px]" viewBox='0 0 24 24'>
+                <path d='M12 7c-1.93 0-3.5 1.57-3.5 3.5S10.07 14 12 14s3.5-1.57 3.5-3.5S13.93 7 12 7m0 5c-.827 0-1.5-.673-1.5-1.5S11.173 9 12 9s1.5.673 1.5 1.5S12.827 12 12 12m0-10c-4.687 0-8.5 3.813-8.5 8.5 0 5.967 7.621 11.116 7.945 11.332l.555.37.555-.37c.324-.216 7.945-5.365 7.945-11.332C20.5 5.813 16.687 2 12 2m0 17.77c-1.665-1.241-6.5-5.196-6.5-9.27C5.5 6.916 8.416 4 12 4s6.5 2.916 6.5 6.5c0 4.073-4.835 8.028-6.5 9.27'></path>
+              </svg>
+              <span className="sr-only">Location</span>
+              <span>{user.location}</span>
             </div>
-          </nav>
-        </div>
-      </section>
+          </div>
 
-    </div>
+          <div className="inline-block fill-[#71767b]">
+            <div className="flex items-center">
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[18.75px] w-[18.75px]"><g><path d="M18.36 5.64c-1.95-1.96-5.11-1.96-7.07 0L9.88 7.05 8.46 5.64l1.42-1.42c2.73-2.73 7.16-2.73 9.9 0 2.73 2.74 2.73 7.17 0 9.9l-1.42 1.42-1.41-1.42 1.41-1.41c1.96-1.96 1.96-5.12 0-7.07zm-2.12 3.53l-7.07 7.07-1.41-1.41 7.07-7.07 1.41 1.41zm-12.02.71l1.42-1.42 1.41 1.42-1.41 1.41c-1.96 1.96-1.96 5.12 0 7.07 1.95 1.96 5.11 1.96 7.07 0l1.41-1.41 1.42 1.41-1.42 1.42c-2.73 2.73-7.16 2.73-9.9 0-2.73-2.74-2.73-7.17 0-9.9z"></path></g></svg>
+              <span className="sr-only">URL</span>
+              {/* <span>{user.}</span> */}
+              <RenderWebsiteLink data={user} />
+            </div>
+          </div>
+
+          <div className="inline-block fill-[#71767b]">
+            <div className="flex">
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[18.75px] w-[18.75px]"><g><path d="M8 10c0-2.21 1.79-4 4-4v2c-1.1 0-2 .9-2 2H8zm12 1c0 4.27-2.69 8.01-6.44 8.83L15 22H9l1.45-2.17C6.7 19.01 4 15.27 4 11c0-4.84 3.46-9 8-9s8 4.16 8 9zm-8 7c3.19 0 6-3 6-7s-2.81-7-6-7-6 3-6 7 2.81 7 6 7z"></path></g></svg>
+              <span className="sr-only">Born</span>
+              {/* <span>{user.}</span> */}
+              <RenderBirthdate user={user} />
+            </div>
+          </div>
+
+          <div className="inline-block fill-[#71767b]">
+            <div className="flex">
+              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[18.75px] w-[18.75px]"><g><path d="M7 4V3h2v1h6V3h2v1h1.5C19.89 4 21 5.12 21 6.5v12c0 1.38-1.11 2.5-2.5 2.5h-13C4.12 21 3 19.88 3 18.5v-12C3 5.12 4.12 4 5.5 4H7zm0 2H5.5c-.27 0-.5.22-.5.5v12c0 .28.23.5.5.5h13c.28 0 .5-.22.5-.5v-12c0-.28-.22-.5-.5-.5H17v1h-2V6H9v1H7V6zm0 6h2v-2H7v2zm0 4h2v-2H7v2zm4-4h2v-2h-2v2zm0 4h2v-2h-2v2zm4-4h2v-2h-2v2z"></path></g></svg>
+              <span className="sr-only">Joined</span>
+              <span>{user.created_at}</span>
+            </div>
+          </div>
+        </section>
+
+
+        {/* {user.followers_count} Following */}
+
+        {/* 27.3M Followers
+          1 Subscriptions */}
+        {/* </div> */}
+
+        <div>
+          {/* Followed BY: */}
+        </div>
+      </section >
+
+    </div >
   )
 }
 
